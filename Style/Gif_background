@@ -1,5 +1,5 @@
 body {
-    background-image:url('https://giffiles.alphacoders.com/147/14777.gif');
+    background-image:url('Animated_Background.gif');
     background-size:100%;
     background-repeat: repeat-y;
     background-attachment: fixed;
