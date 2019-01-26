@@ -6,6 +6,6 @@ body {
     background-attachment: fixed;
     height:100%;
     width:100%;
-    filter: blur(20px);
+    filter: blur(100px);
   
 }
