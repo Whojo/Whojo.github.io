@@ -22,6 +22,29 @@
     justify-content: center;
     align-items: center;
 }
+
+.left {
+transform: translate(-110%, -50%);
+}
+
+.right {
+transform: translate(0, -50%);
+}
+
+.button {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 10%;
+ 
+  text-align: center;
+  cursor : pointer
+}
 	  </style>
 	  
   </head>
@@ -35,10 +58,10 @@
 					<center><font size="100">Zephyr</font></center>
                 </div>
 				<form method="get" action="http://zelstrom.me/home_en.html">
-					<button type="submit">Join The Adventure</button>
+					<input type="submit" value="Join The Adventure" class="button left"/>
 				</form>
-				<form method="get" action="http://zelstrom.me/home_fr.html">
-					<button type="submit">Rejoindre L'Aventure</button>
+				<form action="http://zelstrom.me/home_fr.html">
+					<input type="submit" value="Rejoindre L'Aventure" class="button right"/>
 				</form>
             </div>
         </section>
