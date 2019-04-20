@@ -1,5 +1,5 @@
 body {
-    background-image:'Images/Animated_Background.gif';
+    background-image:url('Images/Animated_Background.gif');
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
