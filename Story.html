@@ -14,6 +14,32 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
     <link rel="stylesheet" href="Style/Helpers.css">
+
+    <style>
+
+        .is-paddingless-horizontal { padding-left: 0; padding-right: 0; }
+
+        .gridleft {
+            display: grid;
+            grid-template-columns:
+                    5% [main-start] 50% [main-end] 5% [image-start] 1fr [image-end] 5%;
+        }
+
+        .gridright {
+            display: grid;
+            grid-template-columns:
+                    5% [image-start] 1fr [image-end] 5% [main-start] 50% [main-end] 5%;
+        }
+
+
+        .gridleft *  { grid-column: main; }
+        .gridleft-image { grid-column: image; }
+
+
+        .gridright *  { grid-column: main; }
+        .gridright-image { grid-column: image; }
+
+    </style>
 </head>
 
 
@@ -46,5 +72,182 @@
         </div>
     </div>
 </section>
+
+
+<!-- main -->
+<section class="section is-paddingless-horizontal">
+    <div class="container has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 7 Janvier : La décision la plus importante</h1>
+            <p>Après avoir décidé des directives globales du jeu. Un nom majestueux s'imposait.
+            Zéphyr est sorti du lot assez rapidement comme nom de jeu. Mais l'ensemble du groupe
+            n'était pas en accord sur son orthographe (« Zéphyr » ou « Zephyr »). A la suite d’un lancé
+            de pièce (mal tombé...), Zéphyr est né.</p>
+            <br></br>
+            <p>Ensuite est venu le moment de choisir le nom du groupe. C’est après de longs moments de
+            réflexion intenses et de multiples propositions, que finalement Maelström a émergé. Il a
+            su plaire au groupe par sa sonorité originale. Cependant nous voulions que ce nom se rapproche plus de Zéphyr.
+            Ainsi le « Ma » de « Malström » a donc été transformé en « Ze » donnant finalement Zelstrom.</p>
+        </div>
+        <div class="gridleft-image has-text-centered">
+            test2
+        </div>
+    </div>
+    <div class="container has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            test2
+        </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 14 Janvier : CAHIER DES CHARGES</h1>
+            <p>La date du rendu du cahier des charges approche sérieusement et il reste encore beaucoup de mise en page à faire.
+                La plupart des idées et des méchaniques de notre jeu ont été accordées et mis à plat la semaine précédente. Après un week end
+                intense en écriture. Le cahier des charges à été fini à temps et rendu.</p>
+            <br></br>
+            <p>Un problème de taille s'est montré : le choix du logo...
+                Dans un but de simplicité, le "Z" de "Zéphyr" est sorti du lot d'idées. Après une installation laborieuse de
+                photoShop (légalement, comme vous pouvez justement le supposé), la manipulation du logiciel s'est avéré compliqué...
+                Le logo a donc pris bien plus de temps que prévu a être réalisé. Mais au bout d'une soirée, celui-ci était terminé
+                et nous correspondait.</p>
+        </div>
+    </div>
+    <div class="container has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 21 Janvier : Le Début</h1>
+            <p>Cette semaine marque le réel début du projet. Nous avons donc commencé à tout planifier.
+                Les tâches de notre projet ont été divisé en sous-tâches moins complexes et des dates limites attribuées à chacune
+                d'elles. Cela nous parait être un élément indispensable afin d'avancer efficacement et régulièrement.</p>
+            <br></br>
+            <p>Cela fait, nous sommes passé au concret. Les scripts les plus basiques (mouvements du personnage et de la caméra)
+                ont été réalisés facilement et rapidement. Le nom de domaine du site a été acheté et le premier fichier html
+                push sur le serveur.</p>
+            <br></br>
+            <p>L'excitation du résultat finale nous rend motivé et efficace.</p>
+        </div>
+        <div class="gridleft-image has-text-centered">
+            test2
+        </div>
+    </div>
+    <div class="container has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            test2
+        </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 28 janvier : Finalisation du concept</h1>
+            <p>Cette semaine n'a pas été très active dans l'avancement du projet... (révision TD de maths)
+                Nous avons probablement perdu trop temps à mettre en commun nos idées... Mais cela a tout de
+                même permis de s'assurer que nous ayons tous la même conception du jeu final. </p>
+            <br></br>
+            <p>Nous avons tout de même avancé sur le site web, les mécaniques
+                d'animation des personnages et la connection multijoueur.</p>
+        </div>
+    </div>
+    <div class="container has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 11 février : </h1>
+            <p>On vient de réaliser que la première soutenance était déjà dans 3 semaines...
+                Le multi a commencé a être développé. C'était peut-être une erreur de le commencer aussi tard.
+                La page principale du site web est terminé. L'interface (mini carte et affichage de la vie) est
+                en cours de développement. Il y a pour l'instant un bug plutôt drôle avec la minicarte. En effet,
+                celle-ci bouge avec les mouvements du joueur et de la souris. Cequi s'avère peu pratique xD
+                Le déplacement des ennemis pour suivre le joueur ont été implémenté avec succès.</p>
+        </div>
+        <div class="gridleft-image has-text-centered">
+            test2
+        </div>
+    </div>
+    <div class="container has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            test2
+        </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 18 février : </h1>
+            <p>Le menu principale du jeu et celui des paramètres ont été implémenté. Le bug de la Minicarte a été fixé,
+                grace au talent de Philippe ^^. Le mode multijoueur a été implémenté. Il est donc à présent possiblde
+                de jouer en ligne. Et la page principale du site web a été push.</p>
+        </div>
+    </div>
+    <div class="container has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 25 février : </h1>
+            <p>C'est les vacances, on se repose (un peu). Pas trop non plus, on a des midterms + soutenance à la rentrée...</p>
+        </div>
+        <div class="gridleft-image has-text-centered">
+            test2
+        </div>
+    </div>
+    <div class="container has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            test2
+        </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 4 Mars : </h1>
+            <p></p>
+        </div>
+    </div>
+    <div class="container has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 11 Mars : </h1>
+            <p></p>
+        </div>
+        <div class="gridleft-image has-text-centered">
+            test2
+        </div>
+    </div>
+    <div class="container has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            test2
+        </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 18 Mars : </h1>
+            <p></p>
+        </div>
+    </div>
+    <div class="container has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 25 Mars : </h1>
+            <p></p>
+        </div>
+        <div class="gridleft-image has-text-centered">
+            test2
+        </div>
+    </div>
+    <div class="container has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            test2
+        </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 1 avril : </h1>
+            <p></p>
+        </div>
+    </div>
+    <div class="container has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 8 avril : </h1>
+            <p></p>
+        </div>
+        <div class="gridleft-image has-text-centered">
+            test2
+        </div>
+    </div>
+    <div class="container has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            test2
+        </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 15 avril : </h1>
+            <p></p>
+        </div>
+    </div>
+    <div class="container has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5"><br></br>Semaine du 22 avril : </h1>
+            <p></p>
+        </div>
+        <div class="gridleft-image has-text-centered">
+            test2
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
