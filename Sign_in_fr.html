@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Zelstrom</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Style/Images/VRAILOGO.jpg">
+    <meta name="description" content="Zephyr : Rogue-lite, Action-rpg">
+    <meta name="keywords" content="Game, Unter the Gungeon, Rogue-Lite, Action-rpg">
+    <meta name="author" content="Zelstrom">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <link rel="stylesheet" href="Style/Helpers.css">
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+        .login-page {
+            width: 360px;
+            padding: 8% 0 0;
+            margin: auto;
+        }
+        .form {
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+        .form input {
+            font-family: "Roboto", sans-serif;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .form button {
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background: #4CAF50;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .form button:hover,.form button:active,.form button:focus {
+            background: #43A047;
+        }
+        .form .message {
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+        }
+        .form .message a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .container:before, .container:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .container .info {
+            margin: 50px auto;
+            text-align: center;
+        }
+        .container .info h1 {
+            margin: 0 0 15px;
+            padding: 0;
+            font-size: 36px;
+            font-weight: 300;
+            color: #1a1a1a;
+        }
+        .container .info span {
+            color: #4d4d4d;
+            font-size: 12px;
+        }
+        .container .info span a {
+            color: #000000;
+            text-decoration: none;
+        }
+        .container .info span .fa {
+            color: #EF3B3A;
+        }
+    </style>
+</head>
+
+
+<body>
+<!-- header -->
+<section class="hero has-background-black">
+    <div class="hero-head">
+        <div class="columns is-mobile is-marginless heading has-text-weight-bold">
+            <div class="column left">
+                <figure class="navbar-item image">
+                    <img src="Style/Images/VRAILOGO.jpg" style="width: 2rem; height: 2rem;">
+                </figure>
+                <p class="has-text-white"><a href="home_fr.html" style="color: #ffffff">Zéphyr</a></p>
+            </div>
+            <div class="column center">
+                <p class="navbar-item has-text-white desktop"><a href="Download_fr.html" style="color: #ffffff">TELECHARGEMENT</a></p>
+                <p class="navbar-item has-text-white desktop"><a href="Gameplay_fr.html" style="color: #ffffff">JEU           </a></p>
+                <p class="navbar-item has-text-white desktop"><a href="Scenario_fr.html" style="color: #ffffff">SCENARIO      </a></p>
+                <p class="navbar-item has-text-white desktop"><a href="Team_fr.html" style="color: #ffffff">NOTRE EQUIPE  </a></p>
+                <p class="navbar-item has-text-white desktop"><a href="Story_fr.html" style="color: #ffffff">NOTRE HISTOIRE</a></p>
+            </div>
+            <div class="column right">
+                <p class="navbar-item has-text-white"><a href="Support_fr.html" style="color: #ffffff">SUPPORT     </a></p>
+                <!--<p class="navbar-item has-text-white desktop">SHOP   </p>-->
+                <p class="navbar-item has-text-white"><a href="Sign_in_fr.html" style="color: #ffffff">SE CONNECTER</a></p>
+                <figure class="navbar-item image has-text-white center">
+                    <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- main -->
+<section class="section">
+    <div class="notification has-background-light">
+        <div class="login-page">
+            <div class="form">
+                <form class="login-form">
+                    <input type="text" placeholder="nom d'utilisateur"/>
+                    <input type="password" placeholder="mot de passe"/>
+                    <button>Se connecter</button>
+                    <p class="message">Ou <a href="#">Créer un compte</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
