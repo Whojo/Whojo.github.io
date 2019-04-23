@@ -15,6 +15,14 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
     <link rel="stylesheet" href="Style/Helpers.css">
+
+    <style>
+        img {
+            width: 50%;
+            height: 50%;
+            object-fit: contain;
+        }
+    </style>
 </head>
 
 
@@ -129,25 +137,10 @@
             En effet, chacun d'entre eux à une compétence spéciale qui lui est propre et ainsi des mécaniques de jeu différentes. Pour éviter que
             tu en abuses (oui on te connais un peu quand même...), on a mis un temps entre chaque utilisation. Vois ça comme une sécurité enfant.<br></br></p>
         
-        <p>Tu auras donc le choix entre les 4 personnages suivants :</p>
-        <dl>
-            <li>
-                Harry Cover :
-                <p>Compétence spéciale : Le Mur</p>
-            </li>
-            <li>
-                Charles Athan :
-                <p>Compétence spéciale : Invincible</p>
-            </li>
-            <li>
-                Annie Mall :
-                <p>Compétence spéciale : Onde de Choc</p>
-            </li>
-            <li>
-                Thea Louest :
-                <p>Compétence spéciale : Plein  Soin</p>
-            </li>
-        </dl>
+        <p>Voici un tableau récapitulatif de leurs spécificités:</p>
+        <figure class="center">
+            <img src="Image\Persos.jpg">
+        </figure>
     </div>
 
     <div class="notification has-background-light justify-content">
@@ -181,10 +174,15 @@
                 <p>Cadence de tirs très faible. Les balles tirées sont très rapides et font beaucoup de dégâts.</p>
             </li>
         </dl>
+
+        <p>Voici un tableau récapitulatif de leur spécificités:</p>
+        <figure class="center">
+            <img src="Image\Armes.jpg">
+        </figure>
     </div>
 
     <div class="notification has-background-light justify-content">
-        <h1 class="title has-text-centered">Les armes</h1>
+        <h1 class="title has-text-centered">Les monstres</h1>
 
         <p>Tu as l'air de ne pas très exité pour l'instant... Alors pour ajouter un  peu de chalenge au jeu, on va ajouter
             des monstres, plein de monstres !!! Tu as donc 5 familles de montres pour un totale de 11 ennemis différents.
@@ -194,71 +192,44 @@
         <p>Ainsi à travers tes aventures tu pourras affronter :</p>
 
         <dl>
-            <li>Des Zombies</li>
-            <li>Des hommes des Neiges</li>
-            <li>Des Aliens</li>
-            <li>Des mages malfiques</li>
-            <li>Des gnomes</li>
+            <li>
+                Des Zombies
+                <p>Il s'agit du monstre de base, il ne peut attaquer qu'au corps à corps. Il a deux formes différentes :</p>
+                <p>-Zombi simple</p>
+                <p>-Zombi boss</p><br></br>
+            </li>
+            <li>
+                Des hommes des Neiges
+                <p>Il attaque à distance, ce aui le rend articulièrement menaçant. Il a deux formes différentes :</p>
+                <p>-L'homme des Neiges Simple</p>
+                <p>-L'homme des Neiges Boss</p><br></br>
+            </li>
+            <li>
+                Des Aliens
+                <p>Il s'agit de l'un des groupes les plus redoutables. Il a deux modes de tirs, un normal et l'autre en zone. Il a deux formes différentes :</p>
+                <p>-L'Alien simple</p>
+                <p>-L'Alien Boss</p><br></br>
+            </li>
+            <li>
+                Des mages malfiques
+                <p>Il a une mécanique très particulière qui le rend redoutable. En plus de se déplacer très rapidement, à sa mort, il se divise en 2 "parents" qui eux même se divise en 2 "bébés"</p>
+                <p>-Le Mage Bébé</p>
+                <p>-Le Mage parent</p>
+                <p>-Le Mage Boss</p><br></br>
+            </li>
+            <li>
+                Des gnomes
+                <p>Il est nécessaire de s'en méfier car ce groupe possède des snipers. Malgrés sa vitesse de déplacecment plutôt faible, il a des dégats très élevés. Il a deux formes différentes :</p>
+                <p>-Gnome Simple</p>
+                <p>-Gnome Boss</p>
+            </li>
         </dl>
 
+        <p>Voici un tableau récapitulatif de leur spécificités:</p>
+        <figure class="center">
+            <img src="Image\Ennemis.jpg">
+        </figure>
     </div>
 </section>
-<!--
-
-1) Groupe Zombi(2)
-- Personnage de base qui ne peut qu'attaquer qu'au corps a corps.
-
-1) Zombi simple (vie : 100)(dégâts : 5)(rayon d'action : 20)
-2) Zombi Boss   (vie : 300)(dégâts : 10)(rayon d'action : 40)
-
-
-2) Groupe Ice(2)
-- Groupe d'attaque a distance basique
-- Un tir simple, une particule qui fait des dégâts que si elle touche un allié
-
-1) Ice simple (vie : 110)(dégâts : 10)(rayon d'action : 60)
-(vitesse : 5)(vitesse tir : 10)
-2) Ice Boss (vie : 300)(dégâts : 15)(rayon d'action : 70)
-(vitesse : 6)(vitesse tir : 10)
-
-
-3) Groupe Alien(2)
-- Un des groupes les plus redoutables.
-- Un tir de base(TDB), une particule qui fait des dégâts que si elle touche un allié
-- Un tir special(TS), 300 particules tirées en meme temps autour de lui
-
-1) Alien simple (vie : 80)(TDB : 5, TS : 5)(rayon d'action : 40)
-(vitesse : 3.5)(vitesse TDB : 10, TS : 10)
-2) Alien Boss (vie : 200)(TDB : 10, TS : 10)(rayon d'action : 50)
-(vitesse : 3.5)(vitesse TDB : 10, TS : 10)
-
-
-4) Groupe Mage(3)
-- Un groupe de division
-- Se déplace très rapidement
-- Le Boss en mourant se divise en 2 "parents"
-- Les "parents" en mourant se divisent en 2 "baby"
-- Un tir, une particule qui fait des dégâts que si elle touche un allié
-
-1) Mage baby (vie : 50)(dégâts : 5)(rayon d'action : 70)
-(vitesse : 8)(vitesse tir : 50)
-2) Mage parent (vie : 80)(dégâts : 7)(rayon d'action : 80)
-(vitesse : 10)(vitesse tir : 50)
-La particule tirée est 2 fois plus grosse que celle du Mage baby
-3) Mage Boss (vie : 150)(dégâts : 10)(rayon d'action : 100)
-(vitesse : 12)(vitesse tir : 50)
-La particule tirée est la meme que celle du parent
-
-
-5) Groupe Gnome
-- Le groupe sniper ennemi
-- Se déplace lentement mais fait beaucoup de dégâts.
-- Un tir, une particule qui fait des dégâts que si elle touche un allié
-
-1) Gnome simple (vie : 70)(dégâts : 50)(rayon d'action : 100)
-(vitesse : 2)(vitesse tir : 100)
-
-2) Gnome Boss (vie : 130)(dégâts : 70)(rayon d'action : 200)
-(vitesse : 3)(vitesse tir : 100)-->
 </body>
 </html>
