@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="fr">
 <head>
     <title>Zelstrom</title>
     <meta charset="UTF-8">
@@ -15,6 +15,31 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
     <link rel="stylesheet" href="Style/Helpers.css">
+
+    <style>
+        .is-paddingless-horizontal { padding-left: 0; padding-right: 0; }
+
+        .gridleft {
+            display: grid;
+            grid-template-columns:
+                    5% [main-start] 50% [main-end] 5% [image-start] 1fr [image-end] 5%;
+        }
+
+        .gridright {
+            display: grid;
+            grid-template-columns:
+                    5% [image-start] 1fr [image-end] 5% [main-start] 50% [main-end] 5%;
+        }
+
+
+        .gridleft *  { grid-column: main; }
+        .gridleft-image { grid-column: image; }
+
+
+        .gridright *  { grid-column: main; }
+        .gridright-image { grid-column: image; }
+
+    </style>
 </head>
 
 
@@ -52,5 +77,44 @@
 
 
 <!-- main -->
+<section class="section is-paddingless-horizontal">
+    <div class="notification has-background-light gridright ">
+        <div class="gridright-image">
+            <section class="section">
+                <figure class="image card" style="width:256px ;height: 195px;">
+                    <img src="Style/Images/VRAILOGO.jpg">
+                </figure>
+                <div><br></br></div>
+                <div><u>Platforme :</u></div>
+                <div class="has-text-grey">Windows, Mac OS X</div>
+                <div><u>Sortie :</u></div>
+                <div>15 Juin 2019</div>
+                <div><u>Equipe de  développement :</u></div>
+                <div>Zelstrom</div>
+
+                <figure class="image card is-64x64">
+                    <img src="Image/Pegi.jpg">
+                </figure>
+            </section>
+        </div>
+        <div class="gridright-main">
+            <h1 class="title is-size-5">Téléchargement</h1>
+            <p>Zéphyr est un jeu d'action-RPG axé sur l'exploration afin de vous apporter une expérience de jeu unique. A travers les niveaux, vos compétences seront mises à l'épreuve en combattant les pires ennemis que le monde n'a jamais connus, en prenant des décisions rationnelles dans les magasins, en vainquant les bosses et surtout en survivant !<br></br>
+            </p>
+            <div class="columns is-mobile is-marginless">
+                <div class="column right">
+                    <a class="button" href="nothing"><!-- add here the link to download the game-->
+                        Télécharger pour Windows
+                    </a>
+                </div>
+                <div class="column left">
+                    <a class="button" href="nothing"><!-- add here the link to download the game-->
+                        Télécharger pour Mac OS X
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
