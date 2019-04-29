@@ -10,114 +10,93 @@
     <meta name="author" content="Zelstrom">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     
     <link rel="stylesheet" href="Style/Helpers.css">
-    
-    <style>
-        .is-paddingless-horizontal { padding-left: 0; padding-right: 0; }
-        
-        .gridleft {
-            display: grid;
-            grid-template-columns:
-                    5% [main-start] 50% [main-end] 5% [image-start] 1fr [image-end] 5%;
-        }
-        
-        .gridright {
-            display: grid;
-            grid-template-columns:
-                    5% [image-start] 1fr [image-end] 5% [main-start] 50% [main-end] 5%;
-        }
-        
-        
-        .gridleft *  { grid-column: main; }
-        .gridleft-image { grid-column: image; }
-        
-        
-        .gridright *  { grid-column: main; }
-        .gridright-image { grid-column: image; }
-        
-    </style>
 </head>
 
 
 <body>
 <!-- header -->
-<section class="hero has-background-black">
-    <div class="hero-head">
-        <div class="columns is-mobile is-marginless heading has-text-weight-bold">
-            <div class="column left">
-                <figure class="navbar-item image">
-                    <img src="Style/Images/VRAILOGO.jpg" style="width: 2rem; height: 2rem;">
-                </figure>
-                <p class="has-text-white"><a href="home_en.html" style="color: #ffffff">Zéphyr</a></p>
-            </div>
-            <div class="column center">
-                <p class="navbar-item has-text-white desktop"><a href="Download_en.html" style="color: #ffffff">DOWNLOAD      </a></p>
-                <p class="navbar-item has-text-white desktop"><a href="Gameplay_en.html" style="color: #ffffff">GAMEPLAY      </a></p>
-                <p class="navbar-item has-text-white desktop"><a href="Scenario_en.html" style="color: #ffffff">SCENARIO      </a></p>
-                <p class="navbar-item has-text-white desktop"><a href="Team_en.html" style="color: #ffffff">OUR TEAM      </a></p>
-                <p class="navbar-item has-text-white desktop"><a href="Story_en.html" style="color: #ffffff">OUR STORY     </a></p>
-                <p class="navbar-item has-text-white desktop"><a href="Ressources_en.html" style="color: #ffffff">OUR RESSOURCES</a></p>
-            </div>
-            <div class="column right">
-                <p class="navbar-item has-text-white"><a href="Support_en.html" style="color: #ffffff">SUPPORT</a></p>
-                <!--<p class="navbar-item has-text-white desktop">SHOP   </p>-->
-                <p class="navbar-item has-text-white"><a href="Sign_in_en.html" style="color: #ffffff">SIGN IN</a></p>
-                <figure class="navbar-item image has-text-white center">
-                    <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
-                </figure>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- main -->
-<section class="section is-paddingless-horizontal">
-    <div class="notification has-background-light gridright ">
-        <div class="gridright-image">
-            <section class="section">
-                <figure class="image card" style="width:256px ;height: 195px;">
-                    <img src="Style/Images/VRAILOGO.jpg">
-                </figure>
-                <div><br></br></div>
-                <div><u>Platform:</u></div>
-                <div class="has-text-grey">Windows, Mac OS X</div>
-                <div><u>Released:</u></div>
-                <div>June 15, 2019</div>
-                <div><u>Developper Team:</u></div>
-                <div>Zelstrom</div>
-                
-                <figure class="image card is-64x64">
-                    <img src="Image/Pegi.jpg">
-                </figure>
-            </section>
-        </div>
-        <div class="gridright-main">
-            <h1 class="title is-size-5">Download</h1>
-            <p>Zéphyr is an action-RPG focusing on exploration in order to bring
-                you a new gaming experience. Through the levels, your skills will be tested
-                by fighting the worst ennemies the world has never known, by taking ratial decision
-                in the shops, by defeating bosses and above all by surviving!<br></br>
-            </p>
-            <div class="columns is-mobile is-marginless">
-                <div class="column right">
-                    <a class="button" href="nothing"><!-- add here the link to download the game-->
-                        Download for Windows
-                    </a>
-                </div>
+<section class="hero background-main is-fullheight">
+    <section class="hero header has-background-black">
+        <div class="hero-head">
+            <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left">
-                    <a class="button" href="nothing"><!-- add here the link to download the game-->
-                        Download for Mac OS X
-                    </a>
+                    <figure class="navbar-item image">
+                        <img src="Style/Images/VRAILOGO.jpg" style="width: 2rem; height: 2rem;">
+                    </figure>
+                    <p class="navbar-item"><a href="home_en.html" class="has-text-white">Zéphyr</a></p>
+                    <p class="navbar-item has-text-white has-text-weight-bold">/</p>
+                    <p class="navbar-item"><a href="Download_en.html" class="has-text-white">Download</a></p>
+                </div>
+                <div class="column center">
+                    <p class="navbar-item desktop"><a href="Download_en.html" class="has-text-grey">DOWNLOAD      </a></p>
+                    <p class="navbar-item desktop"><a href="Gameplay_en.html" class="has-text-light">GAMEPLAY      </a></p>
+                    <p class="navbar-item desktop"><a href="Scenario_en.html" class="has-text-light">SCENARIO      </a></p>
+                    <p class="navbar-item desktop"><a href="Team_en.html" class="has-text-light">OUR TEAM      </a></p>
+                    <p class="navbar-item desktop"><a href="Story_en.html" class="has-text-light">OUR STORY     </a></p>
+                    <p class="navbar-item desktop"><a href="Ressources_en.html" class="has-text-light">OUR RESSOURCES</a></p>
+                </div>
+                <div class="column right">
+                    <p class="navbar-item"><a href="Support_en.html" class="has-text-light">SUPPORT</a></p>
+                    <!--<p class="navbar-item has-text-white desktop">SHOP   </p>-->
+                    <p class="navbar-item"><a href="Sign_in_en.html" class="has-text-light">SIGN IN</a></p>
+                    <figure class="navbar-item image has-text-white center">
+                        <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
+                    </figure>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    
+    
+    
+<!-- main -->
+    <section class="section main">
+        <div class="notification has-background-light gridright is-paddingless-horizontal">
+            <div class="gridright-image">
+                <section class="section">
+                    <figure class="image card" style="width:256px ;height: 195px;">
+                        <img src="Style/Images/VRAILOGO.jpg">
+                    </figure>
+                    <div>
+                        <p><br></br><u>Platform:</u></p>
+                        <p class="has-text-grey">Windows, Mac OS X</p>
+                        <p><u>Released:</u></p>
+                        <p>June 15, 2019</p>
+                        <p><u>Developper Team:</u></p>
+                        <p>Zelstrom<br></br></p>
+                    </div>
+                    
+                    <figure class="image card is-64x64">
+                        <img src="Image/Pegi.jpg">
+                    </figure>
+                </section>
+            </div>
+            <div class="gridright-main">
+                <h1 class="title is-size-5">Download</h1>
+                <p>Zéphyr is an action-RPG focusing on exploration in order to bring
+                    you a new gaming experience. Through the levels, your skills will be tested
+                    by fighting the worst ennemies the world has never known, by taking ratial decision
+                    in the shops, by defeating bosses and above all by surviving!<br></br>
+                </p>
+                <div class="columns is-mobile is-marginless">
+                    <div class="column right">
+                        <a class="button" href="nothing"><!-- add here the link to download the game-->
+                            Download for Windows
+                        </a>
+                    </div>
+                    <div class="column left">
+                        <a class="button" href="nothing"><!-- add here the link to download the game-->
+                            Download for Mac OS X
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </section>
 </body>
 </html>

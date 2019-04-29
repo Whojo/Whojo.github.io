@@ -9,16 +9,15 @@
     <meta name="keywords" content="Game, Unter the Gungeon, Rogue-Lite, Action-rpg">
     <meta name="author" content="Zelstrom">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-
+    
     <link rel="stylesheet" href="Style/Helpers.css">
     
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
+        
         .login-page {
             width: 360px;
             padding: 8% 0 0;
@@ -113,57 +112,61 @@
 
 <body>
 <!-- header -->
-<section class="hero has-background-black">
-    <div class="hero-head">
-        <div class="columns is-mobile is-marginless heading has-text-weight-bold">
-            <div class="column left">
-                <figure class="navbar-item image">
-                    <img src="Style/Images/VRAILOGO.jpg" style="width: 2rem; height: 2rem;">
-                </figure>
-                <p class="has-text-white"><a href="home_en.html" style="color: #ffffff">Zéphyr</a></p>
-            </div>
-            <div class="column center">
-                <p class="navbar-item has-text-white desktop"><a href="Download_en.html" style="color: #ffffff">DOWNLOAD      </a></p>
-                <p class="navbar-item has-text-white desktop"><a href="Gameplay_en.html" style="color: #ffffff">GAMEPLAY      </a></p>
-                <p class="navbar-item has-text-white desktop"><a href="Scenario_en.html" style="color: #ffffff">SCENARIO      </a></p>
-                <p class="navbar-item has-text-white desktop"><a href="Team_en.html" style="color: #ffffff">OUR TEAM      </a></p>
-                <p class="navbar-item has-text-white desktop"><a href="Story_en.html" style="color: #ffffff">OUR STORY     </a></p>
-                <p class="navbar-item has-text-white desktop"><a href="Ressources_en.html" style="color: #ffffff">OUR RESSOURCES</a></p>
-            </div>
-            <div class="column right">
-                <p class="navbar-item has-text-white"><a href="Support_en.html" style="color: #ffffff">SUPPORT</a></p>
-                <!--<p class="navbar-item has-text-white desktop">SHOP   </p>-->
-                <p class="navbar-item has-text-white"><a href="Sign_in_en.html" style="color: #ffffff">SIGN IN</a></p>
-                <figure class="navbar-item image has-text-white center">
-                    <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
-                </figure>
+<section class="hero background-main is-fullheight">
+    <section class="hero header has-background-black">
+        <div class="hero-head">
+            <div class="columns is-mobile is-marginless heading has-text-weight-bold">
+                <div class="column left">
+                    <figure class="navbar-item image">
+                        <img src="Style/Images/VRAILOGO.jpg" style="width: 2rem; height: 2rem;">
+                    </figure>
+                    <p class="navbar-item"><a href="home_en.html" class="has-text-white">Zéphyr</a></p>
+                    <p class="navbar-item has-text-white has-text-weight-bold">/</p>
+                    <p class="navbar-item"><a href="Sign_in_en.html" class="has-text-white">Sign In</a></p>
+                </div>
+                <div class="column center">
+                    <p class="navbar-item desktop"><a href="Download_en.html" class="has-text-light">DOWNLOAD      </a></p>
+                    <p class="navbar-item desktop"><a href="Gameplay_en.html" class="has-text-light">GAMEPLAY      </a></p>
+                    <p class="navbar-item desktop"><a href="Scenario_en.html" class="has-text-light">SCENARIO      </a></p>
+                    <p class="navbar-item desktop"><a href="Team_en.html" class="has-text-light">OUR TEAM      </a></p>
+                    <p class="navbar-item desktop"><a href="Story_en.html" class="has-text-light">OUR STORY     </a></p>
+                    <p class="navbar-item desktop"><a href="Ressources_en.html" class="has-text-light">OUR RESSOURCES</a></p>
+                </div>
+                <div class="column right">
+                    <p class="navbar-item"><a href="Support_en.html" class="has-text-light">SUPPORT</a></p>
+                    <!--<p class="navbar-item has-text-white desktop">SHOP   </p>-->
+                    <p class="navbar-item"><a href="Sign_in_en.html" class="has-text-grey">SIGN IN</a></p>
+                    <figure class="navbar-item image has-text-white center">
+                        <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
+                    </figure>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-
+    </section>
+    
+    
 <!-- main -->
-<section class="section">
-    <div class="notification has-background-light">
-        <div class="login-page">
-            <div class="form">
-                <form class="register-form">
-                    <input type="text" placeholder="name"/>
-                    <input type="password" placeholder="password"/>
-                    <input type="text" placeholder="email address"/>
-                    <button>create</button>
-                    <p class="message">Already registered? <a href="#">Sign In</a></p>
-                </form>
-                <form class="login-form">
-                    <input type="text" placeholder="username"/>
-                    <input type="password" placeholder="password"/>
-                    <button>login</button>
-                    <p class="message">Not registered? <a href="#">Create an account</a></p>
-                </form>
+    <section class="section">
+        <div class="notification has-background-light">
+            <div class="login-page">
+                <div class="form">
+                    <form class="register-form">
+                        <input type="text" placeholder="name"/>
+                        <input type="password" placeholder="password"/>
+                        <input type="text" placeholder="email address"/>
+                        <button>create</button>
+                        <p class="message">Already registered? <a href="#">Sign In</a></p>
+                    </form>
+                    <form class="login-form">
+                        <input type="text" placeholder="username"/>
+                        <input type="password" placeholder="password"/>
+                        <button>login</button>
+                        <p class="message">Not registered? <a href="#">Create an account</a></p>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </section>
 </body>
 </html>

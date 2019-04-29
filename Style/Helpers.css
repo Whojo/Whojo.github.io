@@ -1,3 +1,14 @@
+.background-home {
+    background-image:url('Images/Animated_Background.gif');
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height:100%;
+    width:100%;
+}
+
+
 .center, .center-column, .top, .right, .bottom, .left {
     display: flex;
     justify-content: center;
@@ -22,3 +33,51 @@
         display: none;
     }
 }
+
+.main{
+    top: 70%;
+}
+
+.background-main {
+    background: url(Images/TheTeam.png) center / cover;
+    /*position: fixed;*/
+    background-attachment: fixed;
+    z-index: 3;
+}
+
+
+.header{
+    top : 0px;
+    position : fixed;
+    width : 100%;
+    z-index: 2;
+}
+
+
+.notification {
+    opacity : 0.90;
+    z-index: 1;
+}
+
+
+.is-paddingless-horizontal { padding-left: 0; padding-right: 0; }
+
+.gridleft {
+    display: grid;
+    grid-template-columns:
+            5% [main-start] 50% [main-end] 5% [image-start] 1fr [image-end] 5%;
+}
+
+.gridright {
+    display: grid;
+    grid-template-columns:
+            5% [image-start] 1fr [image-end] 5% [main-start] 50% [main-end] 5%;
+}
+
+
+.gridleft *  { grid-column: main; }
+.gridleft-image { grid-column: image; }
+
+
+.gridright *  { grid-column: main; }
+.gridright-image { grid-column: image; }
