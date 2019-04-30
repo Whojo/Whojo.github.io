@@ -33,7 +33,10 @@
         display: none;
     }
 }
-
+.anim {
+    transform: rotate(180deg);
+    animation: 15s infinite;
+}
 .main{
     margin-top: 32%;
 }

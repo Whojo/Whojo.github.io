@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Zelstrom</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Style/Images/VRAILOGO.jpg">
+    <meta name="description" content="Zephyr : Rogue-lite, Action-rpg">
+    <meta name="keywords" content="Game, Unter the Gungeon, Rogue-Lite, Action-rpg">
+    <meta name="author" content="Zelstrom">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    
+    <link rel="stylesheet" href="Style/Helpers.css">
+    <style>
+        .blinking{
+            animation:blinkingText 0.4s infinite;
+        }
+        @keyframes blinkingText{
+            0%{     color: #000;    }
+            30%{     color: #000;    }
+            50%{    color: transparent; }
+            80%{     color: #000;    }
+            100%{   color: #000;    }
+        }
+
+
+        .blinkingred{
+            animation:blinkingTextred 0.4s infinite;
+        }
+        @keyframes blinkingTextred{
+            0%{     color: #000;    }
+            30%{     color: #000;    }
+            50%{    color: #EF3B3A; }
+            80%{     color: #000;    }
+            100%{   color: #000;    }
+        }
+
+
+        .blinkinggreen{
+            animation:blinkingTextgree 0.4s infinite;
+        }
+        @keyframes blinkingTextgree{
+            0%{     color: #000;    }
+            30%{     color: #000;    }
+            50%{    color: #43A047; }
+            80%{     color: #000;    }
+            100%{   color: #000;    }
+        }
+
+
+        .blinkinyellow{
+            animation:blinkingTextyel 0.4s infinite;
+        }
+        @keyframes blinkingTextyel{
+            0%{     color: #000;    }
+            30%{     color: #000;    }
+            50%{    color: #f2f2f2; }
+            80%{     color: #000;    }
+            100%{   color: #000;    }
+        }
+
+
+        .blinkinblue{
+            animation:blinkingTextblu 0.4s infinite;
+        }
+        @keyframes blinkingTextblu{
+            0%{     color: #000;    }
+            30%{     color: #000;    }
+            50%{    color: #0000ff; }
+            80%{     color: #000;    }
+            100%{   color: #000;    }
+        }
+
+
+        .blinkingrainbow{
+            animation:blinkingTextrain 0.4s infinite;
+        }
+        @keyframes blinkingTextrain{
+            0%{     color: #000;    }
+            30%{     color: #43A047;    }
+            50%{    color: #EF3B3A; }
+            80%{     color: #f2f2f2;    }
+            100%{   color: #0000ff;    }
+        }
+
+        .rot20{
+            transform: rotate(20deg);
+        }
+        .rot40{
+            transform: rotate(40deg);
+        }
+        .rot60{
+            transform: rotate(60deg);
+        }
+        .rot120{
+            transform: rotate(120deg);
+        }
+        .rot145{
+            transform: rotate(145deg);
+        }
+    </style>
+    
+    
+</head>
+
+
+<body> <!-- class="anim" -->
+<section class="hero background-main is-fullheight">
+    <!-- header -->
+    <section class="hero header has-background-black">
+        <div class="hero-head">
+            <div class="columns is-mobile is-marginless heading has-text-weight-bold">
+                <div class="column left">
+                    <figure class="navbar-item image">
+                        <img src="Style/Images/VRAILOGO.jpg" style="width: 2rem; height: 2rem;">
+                    </figure>
+                    <p class="navbar-item"><a href="home_en.html" class="has-text-white">Zéphyr</a></p>
+                </div>
+                <div class="column center">
+                    <p class="navbar-item desktop"><a href="Download_en.html" class="has-text-light">DOWNLOAD</a></p>
+                    <p class="navbar-item desktop"><a href="Gameplay_en.html" class="has-text-light">GAMEPLAY</a></p>
+                    <p class="navbar-item desktop"><a href="Scenario_en.html" class="has-text-light">SCENARIO</a></p>
+                    <p class="navbar-item desktop"><a href="Team_en.html" class="has-text-light">OUR TEAM</a></p>
+                    <p class="navbar-item desktop"><a href="Story_en.html" class="has-text-light">OUR STORY</a></p>
+                    <p class="navbar-item desktop"><a href="Ressources_en.html" class="has-text-light">OUR RESSOURCES</a></p>
+                </div>
+                <div class="column right">
+                    <p class="navbar-item"><a href="Support_en.html" class="has-text-light">SUPPORT</a></p>
+                    <!--<p class="navbar-item has-text-white desktop">SHOP   </p>-->
+                    <p class="navbar-item"><a href="Sign_in_en.html" class="has-text-light">SIGN IN</a></p>
+                    <figure class="navbar-item image has-text-white center">
+                        <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Main -->
+    <section class="section" style="margin-top: 5%">
+        <div class="notification has-background-light">
+            <marquee class="blinking rot20" SCROLLAMOUNT="50" BEHAVIOR="alternate" style="position: absolute; top: 10%;">
+                Mourez Tous.
+            </marquee>
+            <marquee class="blinkingred rot120" SCROLLAMOUNT="60" BEHAVIOR="alternate" style="position: absolute; top: 5%;">
+                Mourez Tous.
+            </marquee>
+            <marquee class="blinkinblue rot60" SCROLLAMOUNT="40" BEHAVIOR="alternate" style="position: absolute; top: 15%;">
+                Mourez Tous.
+            </marquee>
+            <marquee class="blinkinblue" SCROLLAMOUNT="30" BEHAVIOR="alternate" style="position: absolute; top: 40%;">
+                Mourez Tous.
+            </marquee>
+            <marquee class="blinkingrainbow rot40" SCROLLAMOUNT="20" BEHAVIOR="alternate" style="position: absolute; top: 25%;">
+                Mourez Tous.
+            </marquee>
+            <marquee class="blinkingred rot120" SCROLLAMOUNT="10" BEHAVIOR="alternate" style="position: absolute; top: 30%;">
+                Mourez Tous.
+            </marquee>
+            <marquee class="blinking rot60" SCROLLAMOUNT="45" BEHAVIOR="alternate" style="position: absolute; top: 60%;">
+                Mourez Tous.
+            </marquee>
+            <marquee class="blinkingrainbow rot145" SCROLLAMOUNT="32" BEHAVIOR="alternate" style="position: absolute; top: 50%;">
+                Mourez Tous.
+            </marquee>
+            <marquee class="blinkinyellow rot40" SCROLLAMOUNT="25" BEHAVIOR="alternate" style="position: absolute; top: 65%;">
+                Mourez Tous.
+            </marquee>
+            <marquee class="blinkinblue" SCROLLAMOUNT="12" BEHAVIOR="alternate" style="position: absolute; top: 80%;">
+                Mourez Tous.
+            </marquee>
+            <marquee class="blinkingrainbow rot20" SCROLLAMOUNT="60" BEHAVIOR="alternate" style="position: absolute; top: 92%;">
+                Mourez Tous.
+            </marquee>
+            <div class="columns">
+                <div class="column">
+                    <section>
+                        <marquee class="blinkingrainbow" DIRECTION="up"  SCROLLAMOUNT="70" BEHAVIOR="alternate" HEIGHT="150">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinkinggreen rot20" DIRECTION="down" SCROLLAMOUNT="10" BEHAVIOR="alternate" HEIGHT="50">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinking rot120" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="80">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinkingrainbow rot40" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="120">
+                            Mourez Tous.
+                        </marquee>
+                    </section>
+                </div>
+                <div class="column center">
+                    <section>
+                        <marquee class="blinkinyellow rot145" DIRECTION="up"  SCROLLAMOUNT="12" BEHAVIOR="alternate" HEIGHT="80">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinkinblue rot40" DIRECTION="up" SCROLLAMOUNT="65" BEHAVIOR="alternate" HEIGHT="260">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinkinggreen rot60" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="60">
+                            Mourez Tous.
+                        </marquee>
+                    </section>
+                </div>
+                <div class="column center">
+                    <section>
+                        <marquee class="blinkingrainbow rot40" DIRECTION="up"  SCROLLAMOUNT="4" BEHAVIOR="alternate" HEIGHT="200">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinkinblue " DIRECTION="down" SCROLLAMOUNT="8" BEHAVIOR="alternate" HEIGHT="200">
+                            Mourez Tous.
+                        </marquee>
+                    </section>
+                </div>
+                <div class="column center">
+                    <section>
+                        <marquee class="blinkinyellow rot145" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="75">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinkinggreen rot20" class="blinking" DIRECTION="down"  SCROLLAMOUNT="2" BEHAVIOR="alternate" HEIGHT="250">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinkingrainbow" DIRECTION="down" SCROLLAMOUNT="60" BEHAVIOR="alternate" HEIGHT="75">
+                            Mourez Tous.
+                        </marquee>
+                    </section>
+                </div>
+                <div class="column center">
+                    <section>
+                        <marquee class="blinking rot145" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="130">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinkingrainbow rot120" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="70">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinkingred rot20" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="100">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinkinggreen rot40" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="70">
+                            Mourez Tous.
+                        </marquee>
+                        <marquee class="blinkingred" DIRECTION="up" SCROLLAMOUNT="10" BEHAVIOR="alternate" HEIGHT="30">
+                            Mourez Tous.
+                        </marquee>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+</body>
+</html>
