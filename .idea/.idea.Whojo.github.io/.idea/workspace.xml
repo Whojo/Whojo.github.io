@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="97e77857-0f9f-4ffe-8c44-29135f82f95c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Whojo.github.io/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Whojo.github.io/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Style/Helpers.css" beforeDir="false" afterPath="$PROJECT_DIR$/Style/Helpers.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home_en.html" beforeDir="false" afterPath="$PROJECT_DIR$/home_en.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home_en.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="54" selection-end-column="55" />
+            <state relative-caret-position="212">
+              <caret line="54" column="56" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#figure#0;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -189,8 +188,9 @@
         <option value="$PROJECT_DIR$/Sign_in_en.html" />
         <option value="$PROJECT_DIR$/Support_en.html" />
         <option value="$PROJECT_DIR$/Style/Helpers.css" />
-        <option value="$PROJECT_DIR$/home_en.html" />
         <option value="$PROJECT_DIR$/MourezTous.html" />
+        <option value="$PROJECT_DIR$/home_en.html" />
+        <option value="$PROJECT_DIR$/../../test.py" />
       </list>
     </option>
   </component>
@@ -279,12 +279,12 @@
       <workItem from="1556564269938" duration="5702000" />
       <workItem from="1556607560517" duration="92000" />
       <workItem from="1556619158791" duration="3891000" />
-      <workItem from="1556651406525" duration="3350000" />
+      <workItem from="1556651406525" duration="5450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97418000" />
+    <option name="totallyTimeSpent" value="99518000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -642,10 +642,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/home_en.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="54" selection-end-column="55" />
+        <state relative-caret-position="212">
+          <caret line="54" column="56" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
           <folding>
             <element signature="n#style#0;n#img#0;n#figure#0;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
