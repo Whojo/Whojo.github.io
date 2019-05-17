@@ -14,87 +14,362 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     
     <link rel="stylesheet" href="Style/Helpers.css">
-    <style>
-        .blinking{
-            animation:blinkingText 0.4s infinite;
-        }
-        @keyframes blinkingText{
-            0%{     color: #000;    }
-            30%{     color: #000;    }
-            50%{    color: transparent; }
-            80%{     color: #000;    }
-            100%{   color: #000;    }
-        }
-
-
-        .blinkingred {
-            animation: blinkingTextred 0.4s infinite;
-        }
-        
+    <style>        
         .machine {
             animation: machine 05s infinite;
         }
         
         @keyframes machine {
-            0% {transform: rotate(0.0deg);}1% {transform: rotate(3.6deg);}2% {transform: rotate(7.2deg);}3% {transform: rotate(10.8deg);}4% {transform: rotate(14.4deg);}5% {transform: rotate(18.0deg);}6% {transform: rotate(21.6deg);}7% {transform: rotate(25.2deg);}8% {transform: rotate(28.8deg);}9% {transform: rotate(32.4deg);}10% {transform: rotate(36.0deg);}11% {transform: rotate(39.6deg);}12% {transform: rotate(43.2deg);}13% {transform: rotate(46.800000000000004deg);}14% {transform: rotate(50.4deg);}15% {transform: rotate(54.0deg);}16% {transform: rotate(57.6deg);}17% {transform: rotate(61.2deg);}18% {transform: rotate(64.8deg);}19% {transform: rotate(68.4deg);}20% {transform: rotate(72.0deg);}21% {transform: rotate(75.60000000000001deg);}22% {transform: rotate(79.2deg);}23% {transform: rotate(82.8deg);}24% {transform: rotate(86.4deg);}25% {transform: rotate(90.0deg);}26% {transform: rotate(93.60000000000001deg);}27% {transform: rotate(97.2deg);}28% {transform: rotate(100.8deg);}29% {transform: rotate(104.4deg);}30% {transform: rotate(108.0deg);}31% {transform: rotate(111.60000000000001deg);}32% {transform: rotate(115.2deg);}33% {transform: rotate(118.8deg);}34% {transform: rotate(122.4deg);}35% {transform: rotate(126.0deg);}36% {transform: rotate(129.6deg);}37% {transform: rotate(133.20000000000002deg);}38% {transform: rotate(136.8deg);}39% {transform: rotate(140.4deg);}40% {transform: rotate(144.0deg);}41% {transform: rotate(147.6deg);}42% {transform: rotate(151.20000000000002deg);}43% {transform: rotate(154.8deg);}44% {transform: rotate(158.4deg);}45% {transform: rotate(162.0deg);}46% {transform: rotate(165.6deg);}47% {transform: rotate(169.20000000000002deg);}48% {transform: rotate(172.8deg);}49% {transform: rotate(176.4deg);}50% {transform: rotate(180.0deg);}51% {transform: rotate(183.6deg);}52% {transform: rotate(187.20000000000002deg);}53% {transform: rotate(190.8deg);}54% {transform: rotate(194.4deg);}55% {transform: rotate(198.0deg);}56% {transform: rotate(201.6deg);}57% {transform: rotate(205.20000000000002deg);}58% {transform: rotate(208.8deg);}59% {transform: rotate(212.4deg);}60% {transform: rotate(216.0deg);}61% {transform: rotate(219.6deg);}62% {transform: rotate(223.20000000000002deg);}63% {transform: rotate(226.8deg);}64% {transform: rotate(230.4deg);}65% {transform: rotate(234.0deg);}66% {transform: rotate(237.6deg);}67% {transform: rotate(241.20000000000002deg);}68% {transform: rotate(244.8deg);}69% {transform: rotate(248.4deg);}70% {transform: rotate(252.0deg);}71% {transform: rotate(255.6deg);}72% {transform: rotate(259.2deg);}73% {transform: rotate(262.8deg);}74% {transform: rotate(266.40000000000003deg);}75% {transform: rotate(270.0deg);}76% {transform: rotate(273.6deg);}77% {transform: rotate(277.2deg);}78% {transform: rotate(280.8deg);}79% {transform: rotate(284.40000000000003deg);}80% {transform: rotate(288.0deg);}81% {transform: rotate(291.6deg);}82% {transform: rotate(295.2deg);}83% {transform: rotate(298.8deg);}84% {transform: rotate(302.40000000000003deg);}85% {transform: rotate(306.0deg);}86% {transform: rotate(309.6deg);}87% {transform: rotate(313.2deg);}88% {transform: rotate(316.8deg);}89% {transform: rotate(320.40000000000003deg);}90% {transform: rotate(324.0deg);}91% {transform: rotate(327.6deg);}92% {transform: rotate(331.2deg);}93% {transform: rotate(334.8deg);}94% {transform: rotate(338.40000000000003deg);}95% {transform: rotate(342.0deg);}96% {transform: rotate(345.6deg);}97% {transform: rotate(349.2deg);}98% {transform: rotate(352.8deg);}99% {transform: rotate(356.40000000000003deg);}100% {transform: rotate(360.0deg);}
-            
+            0% {
+                transform: rotate(0.0deg);
+            }
+            1% {
+                transform: rotate(3.6deg);
+            }
+            2% {
+                transform: rotate(7.2deg);
+            }
+            3% {
+                transform: rotate(10.8deg);
+            }
+            4% {
+                transform: rotate(14.4deg);
+            }
+            5% {
+                transform: rotate(18.0deg);
+            }
+            6% {
+                transform: rotate(21.6deg);
+            }
+            7% {
+                transform: rotate(25.2deg);
+            }
+            8% {
+                transform: rotate(28.8deg);
+            }
+            9% {
+                transform: rotate(32.4deg);
+            }
+            10% {
+                transform: rotate(36.0deg);
+            }
+            11% {
+                transform: rotate(39.6deg);
+            }
+            12% {
+                transform: rotate(43.2deg);
+            }
+            13% {
+                transform: rotate(46.800000000000004deg);
+            }
+            14% {
+                transform: rotate(50.4deg);
+            }
+            15% {
+                transform: rotate(54.0deg);
+            }
+            16% {
+                transform: rotate(57.6deg);
+            }
+            17% {
+                transform: rotate(61.2deg);
+            }
+            18% {
+                transform: rotate(64.8deg);
+            }
+            19% {
+                transform: rotate(68.4deg);
+            }
+            20% {
+                transform: rotate(72.0deg);
+            }
+            21% {
+                transform: rotate(75.60000000000001deg);
+            }
+            22% {
+                transform: rotate(79.2deg);
+            }
+            23% {
+                transform: rotate(82.8deg);
+            }
+            24% {
+                transform: rotate(86.4deg);
+            }
+            25% {
+                transform: rotate(90.0deg);
+            }
+            26% {
+                transform: rotate(93.60000000000001deg);
+            }
+            27% {
+                transform: rotate(97.2deg);
+            }
+            28% {
+                transform: rotate(100.8deg);
+            }
+            29% {
+                transform: rotate(104.4deg);
+            }
+            30% {
+                transform: rotate(108.0deg);
+            }
+            31% {
+                transform: rotate(111.60000000000001deg);
+            }
+            32% {
+                transform: rotate(115.2deg);
+            }
+            33% {
+                transform: rotate(118.8deg);
+            }
+            34% {
+                transform: rotate(122.4deg);
+            }
+            35% {
+                transform: rotate(126.0deg);
+            }
+            36% {
+                transform: rotate(129.6deg);
+            }
+            37% {
+                transform: rotate(133.20000000000002deg);
+            }
+            38% {
+                transform: rotate(136.8deg);
+            }
+            39% {
+                transform: rotate(140.4deg);
+            }
+            40% {
+                transform: rotate(144.0deg);
+            }
+            41% {
+                transform: rotate(147.6deg);
+            }
+            42% {
+                transform: rotate(151.20000000000002deg);
+            }
+            43% {
+                transform: rotate(154.8deg);
+            }
+            44% {
+                transform: rotate(158.4deg);
+            }
+            45% {
+                transform: rotate(162.0deg);
+            }
+            46% {
+                transform: rotate(165.6deg);
+            }
+            47% {
+                transform: rotate(169.20000000000002deg);
+            }
+            48% {
+                transform: rotate(172.8deg);
+            }
+            49% {
+                transform: rotate(176.4deg);
+            }
+            50% {
+                transform: rotate(180.0deg);
+            }
+            51% {
+                transform: rotate(183.6deg);
+            }
+            52% {
+                transform: rotate(187.20000000000002deg);
+            }
+            53% {
+                transform: rotate(190.8deg);
+            }
+            54% {
+                transform: rotate(194.4deg);
+            }
+            55% {
+                transform: rotate(198.0deg);
+            }
+            56% {
+                transform: rotate(201.6deg);
+            }
+            57% {
+                transform: rotate(205.20000000000002deg);
+            }
+            58% {
+                transform: rotate(208.8deg);
+            }
+            59% {
+                transform: rotate(212.4deg);
+            }
+            60% {
+                transform: rotate(216.0deg);
+            }
+            61% {
+                transform: rotate(219.6deg);
+            }
+            62% {
+                transform: rotate(223.20000000000002deg);
+            }
+            63% {
+                transform: rotate(226.8deg);
+            }
+            64% {
+                transform: rotate(230.4deg);
+            }
+            65% {
+                transform: rotate(234.0deg);
+            }
+            66% {
+                transform: rotate(237.6deg);
+            }
+            67% {
+                transform: rotate(241.20000000000002deg);
+            }
+            68% {
+                transform: rotate(244.8deg);
+            }
+            69% {
+                transform: rotate(248.4deg);
+            }
+            70% {
+                transform: rotate(252.0deg);
+            }
+            71% {
+                transform: rotate(255.6deg);
+            }
+            72% {
+                transform: rotate(259.2deg);
+            }
+            73% {
+                transform: rotate(262.8deg);
+            }
+            74% {
+                transform: rotate(266.40000000000003deg);
+            }
+            75% {
+                transform: rotate(270.0deg);
+            }
+            76% {
+                transform: rotate(273.6deg);
+            }
+            77% {
+                transform: rotate(277.2deg);
+            }
+            78% {
+                transform: rotate(280.8deg);
+            }
+            79% {
+                transform: rotate(284.40000000000003deg);
+            }
+            80% {
+                transform: rotate(288.0deg);
+            }
+            81% {
+                transform: rotate(291.6deg);
+            }
+            82% {
+                transform: rotate(295.2deg);
+            }
+            83% {
+                transform: rotate(298.8deg);
+            }
+            84% {
+                transform: rotate(302.40000000000003deg);
+            }
+            85% {
+                transform: rotate(306.0deg);
+            }
+            86% {
+                transform: rotate(309.6deg);
+            }
+            87% {
+                transform: rotate(313.2deg);
+            }
+            88% {
+                transform: rotate(316.8deg);
+            }
+            89% {
+                transform: rotate(320.40000000000003deg);
+            }
+            90% {
+                transform: rotate(324.0deg);
+            }
+            91% {
+                transform: rotate(327.6deg);
+            }
+            92% {
+                transform: rotate(331.2deg);
+            }
+            93% {
+                transform: rotate(334.8deg);
+            }
+            94% {
+                transform: rotate(338.40000000000003deg);
+            }
+            95% {
+                transform: rotate(342.0deg);
+            }
+            96% {
+                transform: rotate(345.6deg);
+            }
+            97% {
+                transform: rotate(349.2deg);
+            }
+            98% {
+                transform: rotate(352.8deg);
+            }
+            99% {
+                transform: rotate(356.40000000000003deg);
+            }
+            100% {
+                transform: rotate(360.0deg);
+            }
         }
-        @keyframes blinkingTextred{
-            0%{     color: #000;    }
-            30%{     color: #000;    }
-            50%{    color: #EF3B3A; }
-            80%{     color: #000;    }
-            100%{   color: #000;    }
+        
+        
+        .blinkingrainbow0{
+            animation:blinkingTextrain0 0.4s infinite;
         }
-
-
-        .blinkinggreen{
-            animation:blinkingTextgree 0.4s infinite;
-        }
-        @keyframes blinkingTextgree{
-            0%{     color: #000;    }
-            30%{     color: #000;    }
-            50%{    color: #43A047; }
-            80%{     color: #000;    }
-            100%{   color: #000;    }
-        }
-
-
-        .blinkinyellow{
-            animation:blinkingTextyel 0.4s infinite;
-        }
-        @keyframes blinkingTextyel{
-            0%{     color: #000;    }
-            30%{     color: #000;    }
-            50%{    color: #f2f2f2; }
-            80%{     color: #000;    }
-            100%{   color: #000;    }
-        }
-
-
-        .blinkinblue{
-            animation:blinkingTextblu 0.4s infinite;
-        }
-        @keyframes blinkingTextblu{
-            0%{     color: #000;    }
-            30%{     color: #000;    }
-            50%{    color: #0000ff; }
-            80%{     color: #000;    }
-            100%{   color: #000;    }
-        }
-
-
-        .blinkingrainbow{
-            animation:blinkingTextrain 0.4s infinite;
-        }
-        @keyframes blinkingTextrain{
+        @keyframes blinkingTextrain0{
             0%{     color: #000;    }
             30%{     color: #43A047;    }
             50%{    color: #EF3B3A; }
             80%{     color: #f2f2f2;    }
             100%{   color: #0000ff;    }
         }
-
+        
+        .blinkingrainbow1{
+            animation:blinkingTextrain1 0.4s infinite;
+        }
+        @keyframes blinkingTextrain1{
+            0%{   color: #0000ff;    }
+            30%{    color: #EF3B3A; }
+            50%{     color: #43A047;    }
+            80%{     color: #000;    }
+            100%{     color: #f2f2f2;    }
+        }
+        
+        .blinkingrainbow2{
+            animation:blinkingTextrain2 0.4s infinite;
+        }
+        @keyframes blinkingTextrain2{
+            0%{    color: #EF3B3A; }
+            30%{     color: #f2f2f2;    }
+            50%{   color: #0000ff;    }
+            80%{     color: #43A047;    }
+            100%{     color: #000;    }
+        }
+        
+        .blinkingrainbow3{
+            animation:blinkingTextrain3 0.4s infinite;
+        }
+        @keyframes blinkingTextrain3{
+            0%{     color: #f2f2f2;    }
+            30%{    color: #EF3B3A; }
+            50%{     color: #000;    }
+            80%{   color: #0000ff; }
+            100%{     color: #43A047;    }
+        }
+        
         .rot20{
             transform: rotate(20deg);
         }
@@ -104,19 +379,31 @@
         .rot60{
             transform: rotate(60deg);
         }
+        .rot80{
+            transform: rotate(80deg);
+        }
+        .rot100{
+            transform: rotate(100deg);
+        }
         .rot120{
             transform: rotate(120deg);
         }
-        .rot145{
-            transform: rotate(145deg);
+        .rot140{
+            transform: rotate(140deg);
+        }
+        .rot160{
+            transform: rotate(160deg);
+        }
+        .rot180{
+            transform: rotate(180deg);
         }
     </style>
     
-    
+
 </head>
 
 
-<body class="machine"> <!-- class="anim" -->
+<body class="machine"> 
 <section class="hero background-main is-fullheight">
     <!-- header -->
     <section class="hero header has-background-black">
@@ -151,115 +438,7 @@
     
     <!-- Main -->
     <section class="section" style="margin-top: 5%">
-        <div class="notification has-background-light">
-            <marquee class="blinking rot20" SCROLLAMOUNT="50" BEHAVIOR="alternate" style="position: absolute; top: 10%;">
-                Mourez Tous.
-            </marquee>
-            <marquee class="blinkingred rot120" SCROLLAMOUNT="60" BEHAVIOR="alternate" style="position: absolute; top: 5%;">
-                Mourez Tous.
-            </marquee>
-            <marquee class="blinkinblue rot60" SCROLLAMOUNT="40" BEHAVIOR="alternate" style="position: absolute; top: 15%;">
-                Mourez Tous.
-            </marquee>
-            <marquee class="blinkinblue" SCROLLAMOUNT="30" BEHAVIOR="alternate" style="position: absolute; top: 40%;">
-                Mourez Tous.
-            </marquee>
-            <marquee class="blinkingrainbow rot40" SCROLLAMOUNT="20" BEHAVIOR="alternate" style="position: absolute; top: 25%;">
-                Mourez Tous.
-            </marquee>
-            <marquee class="blinkingred rot120" SCROLLAMOUNT="10" BEHAVIOR="alternate" style="position: absolute; top: 30%;">
-                Mourez Tous.
-            </marquee>
-            <marquee class="blinking rot60" SCROLLAMOUNT="45" BEHAVIOR="alternate" style="position: absolute; top: 60%;">
-                Mourez Tous.
-            </marquee>
-            <marquee class="blinkingrainbow rot145" SCROLLAMOUNT="32" BEHAVIOR="alternate" style="position: absolute; top: 50%;">
-                Mourez Tous.
-            </marquee>
-            <marquee class="blinkinyellow rot40" SCROLLAMOUNT="25" BEHAVIOR="alternate" style="position: absolute; top: 65%;">
-                Mourez Tous.
-            </marquee>
-            <marquee class="blinkinblue" SCROLLAMOUNT="12" BEHAVIOR="alternate" style="position: absolute; top: 80%;">
-                Mourez Tous.
-            </marquee>
-            <marquee class="blinkingrainbow rot20" SCROLLAMOUNT="60" BEHAVIOR="alternate" style="position: absolute; top: 92%;">
-                Mourez Tous.
-            </marquee>
-            <div class="columns">
-                <div class="column">
-                    <section>
-                        <marquee class="blinkingrainbow" DIRECTION="up"  SCROLLAMOUNT="70" BEHAVIOR="alternate" HEIGHT="150">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinkinggreen rot20" DIRECTION="down" SCROLLAMOUNT="10" BEHAVIOR="alternate" HEIGHT="50">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinking rot120" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="80">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinkingrainbow rot40" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="120">
-                            Mourez Tous.
-                        </marquee>
-                    </section>
-                </div>
-                <div class="column center">
-                    <section>
-                        <marquee class="blinkinyellow rot145" DIRECTION="up"  SCROLLAMOUNT="12" BEHAVIOR="alternate" HEIGHT="80">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinkinblue rot40" DIRECTION="up" SCROLLAMOUNT="65" BEHAVIOR="alternate" HEIGHT="260">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinkinggreen rot60" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="60">
-                            Mourez Tous.
-                        </marquee>
-                    </section>
-                </div>
-                <div class="column center">
-                    <section>
-                        <marquee class="blinkingrainbow rot40" DIRECTION="up"  SCROLLAMOUNT="4" BEHAVIOR="alternate" HEIGHT="200">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinkinblue " DIRECTION="down" SCROLLAMOUNT="8" BEHAVIOR="alternate" HEIGHT="200">
-                            Mourez Tous.
-                        </marquee>
-                    </section>
-                </div>
-                <div class="column center">
-                    <section>
-                        <marquee class="blinkinyellow rot145" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="75">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinkinggreen rot20" class="blinking" DIRECTION="down"  SCROLLAMOUNT="2" BEHAVIOR="alternate" HEIGHT="250">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinkingrainbow" DIRECTION="down" SCROLLAMOUNT="60" BEHAVIOR="alternate" HEIGHT="75">
-                            Mourez Tous.
-                        </marquee>
-                    </section>
-                </div>
-                <div class="column center">
-                    <section>
-                        <marquee class="blinking rot145" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="130">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinkingrainbow rot120" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="70">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinkingred rot20" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="100">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinkinggreen rot40" DIRECTION="down" SCROLLAMOUNT="30" BEHAVIOR="alternate" HEIGHT="70">
-                            Mourez Tous.
-                        </marquee>
-                        <marquee class="blinkingred" DIRECTION="up" SCROLLAMOUNT="10" BEHAVIOR="alternate" HEIGHT="30">
-                            Mourez Tous.
-                        </marquee>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </section>
+        <marquee class="blinkingrainbow1 rot80 title is-size-5" SCROLLAMOUNT="10" BEHAVIOR="alternate" style="position: absolute; top: 39%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot80 title is-size-3" SCROLLAMOUNT="94" BEHAVIOR="alternate" style="position: absolute; top: 30%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot60 title is-size-6" SCROLLAMOUNT="29" BEHAVIOR="alternate" style="position: absolute; top: 19%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot100 title is-size-6" SCROLLAMOUNT="50" BEHAVIOR="alternate" style="position: absolute; top: 64%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot120 title is-size-3" SCROLLAMOUNT="57" BEHAVIOR="alternate" style="position: absolute; top: 55%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot60 title is-size-3" SCROLLAMOUNT="47" BEHAVIOR="alternate" style="position: absolute; top: 72%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot120 title is-size-2" SCROLLAMOUNT="69" BEHAVIOR="alternate" style="position: absolute; top: 21%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot60 title is-size-5" SCROLLAMOUNT="75" BEHAVIOR="alternate" style="position: absolute; top: 12%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot80 title is-size-3" SCROLLAMOUNT="6" BEHAVIOR="alternate" style="position: absolute; top: 15%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot140 title is-size-1" SCROLLAMOUNT="106" BEHAVIOR="alternate" style="position: absolute; top: 36%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot160 title is-size-1" SCROLLAMOUNT="115" BEHAVIOR="alternate" style="position: absolute; top: 76%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot40 title is-size-2" SCROLLAMOUNT="29" BEHAVIOR="alternate" style="position: absolute; top: 23%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot40 title is-size-2" SCROLLAMOUNT="89" BEHAVIOR="alternate" style="position: absolute; top: 10%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot180 title is-size-5" SCROLLAMOUNT="78" BEHAVIOR="alternate" style="position: absolute; top: 63%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot180 title is-size-1" SCROLLAMOUNT="116" BEHAVIOR="alternate" style="position: absolute; top: 70%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot140 title is-size-3" SCROLLAMOUNT="56" BEHAVIOR="alternate" style="position: absolute; top: 41%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot160 title is-size-2" SCROLLAMOUNT="103" BEHAVIOR="alternate" style="position: absolute; top: 65%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot160 title is-size-6" SCROLLAMOUNT="76" BEHAVIOR="alternate" style="position: absolute; top: 76%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot120 title is-size-2" SCROLLAMOUNT="94" BEHAVIOR="alternate" style="position: absolute; top: 15%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot180 title is-size-1" SCROLLAMOUNT="1" BEHAVIOR="alternate" style="position: absolute; top: 11%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot100 title is-size-3" SCROLLAMOUNT="120" BEHAVIOR="alternate" style="position: absolute; top: 38%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot160 title is-size-2" SCROLLAMOUNT="56" BEHAVIOR="alternate" style="position: absolute; top: 44%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot140 title is-size-5" SCROLLAMOUNT="42" BEHAVIOR="alternate" style="position: absolute; top: 17%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot40 title is-size-2" SCROLLAMOUNT="99" BEHAVIOR="alternate" style="position: absolute; top: 58%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot40 title is-size-6" SCROLLAMOUNT="34" BEHAVIOR="alternate" style="position: absolute; top: 68%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot180 title is-size-3" SCROLLAMOUNT="104" BEHAVIOR="alternate" style="position: absolute; top: 71%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot180 title is-size-1" SCROLLAMOUNT="43" BEHAVIOR="alternate" style="position: absolute; top: 55%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot60 title is-size-3" SCROLLAMOUNT="37" BEHAVIOR="alternate" style="position: absolute; top: 78%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot100 title is-size-6" SCROLLAMOUNT="92" BEHAVIOR="alternate" style="position: absolute; top: 22%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot160 title is-size-5" SCROLLAMOUNT="98" BEHAVIOR="alternate" style="position: absolute; top: 60%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot40 title is-size-5" SCROLLAMOUNT="66" BEHAVIOR="alternate" style="position: absolute; top: 55%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot160 title is-size-3" SCROLLAMOUNT="49" BEHAVIOR="alternate" style="position: absolute; top: 29%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot140 title is-size-6" SCROLLAMOUNT="86" BEHAVIOR="alternate" style="position: absolute; top: 54%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot180 title is-size-2" SCROLLAMOUNT="1" BEHAVIOR="alternate" style="position: absolute; top: 61%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot120 title is-size-3" SCROLLAMOUNT="33" BEHAVIOR="alternate" style="position: absolute; top: 59%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot20 title is-size-4" SCROLLAMOUNT="98" BEHAVIOR="alternate" style="position: absolute; top: 75%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot60 title is-size-6" SCROLLAMOUNT="93" BEHAVIOR="alternate" style="position: absolute; top: 32%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot60 title is-size-1" SCROLLAMOUNT="50" BEHAVIOR="alternate" style="position: absolute; top: 78%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot80 title is-size-5" SCROLLAMOUNT="41" BEHAVIOR="alternate" style="position: absolute; top: 73%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot140 title is-size-1" SCROLLAMOUNT="19" BEHAVIOR="alternate" style="position: absolute; top: 16%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot20 title is-size-4" SCROLLAMOUNT="76" BEHAVIOR="alternate" style="position: absolute; top: 12%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot60 title is-size-5" SCROLLAMOUNT="24" BEHAVIOR="alternate" style="position: absolute; top: 29%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot80 title is-size-6" SCROLLAMOUNT="44" BEHAVIOR="alternate" style="position: absolute; top: 79%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot100 title is-size-6" SCROLLAMOUNT="89" BEHAVIOR="alternate" style="position: absolute; top: 68%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot180 title is-size-3" SCROLLAMOUNT="113" BEHAVIOR="alternate" style="position: absolute; top: 56%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot160 title is-size-2" SCROLLAMOUNT="67" BEHAVIOR="alternate" style="position: absolute; top: 71%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot160 title is-size-3" SCROLLAMOUNT="49" BEHAVIOR="alternate" style="position: absolute; top: 51%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot100 title is-size-2" SCROLLAMOUNT="15" BEHAVIOR="alternate" style="position: absolute; top: 70%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot80 title is-size-5" SCROLLAMOUNT="17" BEHAVIOR="alternate" style="position: absolute; top: 16%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot40 title is-size-1" SCROLLAMOUNT="51" BEHAVIOR="alternate" style="position: absolute; top: 78%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot140 title is-size-3" SCROLLAMOUNT="53" BEHAVIOR="alternate" style="position: absolute; top: 13%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot120 title is-size-6" SCROLLAMOUNT="52" BEHAVIOR="alternate" style="position: absolute; top: 50%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot100 title is-size-3" SCROLLAMOUNT="44" BEHAVIOR="alternate" style="position: absolute; top: 53%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot80 title is-size-2" SCROLLAMOUNT="45" BEHAVIOR="alternate" style="position: absolute; top: 68%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot40 title is-size-2" SCROLLAMOUNT="93" BEHAVIOR="alternate" style="position: absolute; top: 70%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot120 title is-size-5" SCROLLAMOUNT="41" BEHAVIOR="alternate" style="position: absolute; top: 64%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot180 title is-size-1" SCROLLAMOUNT="79" BEHAVIOR="alternate" style="position: absolute; top: 17%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot160 title is-size-3" SCROLLAMOUNT="56" BEHAVIOR="alternate" style="position: absolute; top: 56%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot160 title is-size-5" SCROLLAMOUNT="9" BEHAVIOR="alternate" style="position: absolute; top: 50%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot140 title is-size-6" SCROLLAMOUNT="36" BEHAVIOR="alternate" style="position: absolute; top: 33%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot40 title is-size-3" SCROLLAMOUNT="90" BEHAVIOR="alternate" style="position: absolute; top: 47%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot60 title is-size-2" SCROLLAMOUNT="4" BEHAVIOR="alternate" style="position: absolute; top: 20%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot40 title is-size-4" SCROLLAMOUNT="9" BEHAVIOR="alternate" style="position: absolute; top: 36%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot140 title is-size-1" SCROLLAMOUNT="12" BEHAVIOR="alternate" style="position: absolute; top: 58%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot100 title is-size-6" SCROLLAMOUNT="3" BEHAVIOR="alternate" style="position: absolute; top: 15%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot160 title is-size-4" SCROLLAMOUNT="35" BEHAVIOR="alternate" style="position: absolute; top: 61%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot140 title is-size-5" SCROLLAMOUNT="117" BEHAVIOR="alternate" style="position: absolute; top: 73%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot40 title is-size-5" SCROLLAMOUNT="67" BEHAVIOR="alternate" style="position: absolute; top: 68%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot140 title is-size-4" SCROLLAMOUNT="84" BEHAVIOR="alternate" style="position: absolute; top: 54%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot140 title is-size-4" SCROLLAMOUNT="105" BEHAVIOR="alternate" style="position: absolute; top: 56%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot160 title is-size-3" SCROLLAMOUNT="73" BEHAVIOR="alternate" style="position: absolute; top: 27%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot120 title is-size-4" SCROLLAMOUNT="88" BEHAVIOR="alternate" style="position: absolute; top: 65%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot100 title is-size-3" SCROLLAMOUNT="87" BEHAVIOR="alternate" style="position: absolute; top: 64%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot120 title is-size-1" SCROLLAMOUNT="48" BEHAVIOR="alternate" style="position: absolute; top: 61%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot160 title is-size-3" SCROLLAMOUNT="44" BEHAVIOR="alternate" style="position: absolute; top: 26%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot120 title is-size-3" SCROLLAMOUNT="73" BEHAVIOR="alternate" style="position: absolute; top: 59%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot20 title is-size-3" SCROLLAMOUNT="57" BEHAVIOR="alternate" style="position: absolute; top: 34%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot80 title is-size-6" SCROLLAMOUNT="21" BEHAVIOR="alternate" style="position: absolute; top: 51%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot80 title is-size-4" SCROLLAMOUNT="77" BEHAVIOR="alternate" style="position: absolute; top: 74%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot140 title is-size-5" SCROLLAMOUNT="26" BEHAVIOR="alternate" style="position: absolute; top: 27%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot100 title is-size-1" SCROLLAMOUNT="1" BEHAVIOR="alternate" style="position: absolute; top: 24%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot120 title is-size-5" SCROLLAMOUNT="94" BEHAVIOR="alternate" style="position: absolute; top: 49%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot60 title is-size-6" SCROLLAMOUNT="34" BEHAVIOR="alternate" style="position: absolute; top: 29%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot180 title is-size-1" SCROLLAMOUNT="52" BEHAVIOR="alternate" style="position: absolute; top: 30%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot80 title is-size-6" SCROLLAMOUNT="85" BEHAVIOR="alternate" style="position: absolute; top: 75%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot120 title is-size-6" SCROLLAMOUNT="101" BEHAVIOR="alternate" style="position: absolute; top: 49%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot40 title is-size-6" SCROLLAMOUNT="65" BEHAVIOR="alternate" style="position: absolute; top: 50%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot60 title is-size-3" SCROLLAMOUNT="98" BEHAVIOR="alternate" style="position: absolute; top: 73%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot40 title is-size-4" SCROLLAMOUNT="70" BEHAVIOR="alternate" style="position: absolute; top: 34%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot160 title is-size-5" SCROLLAMOUNT="47" BEHAVIOR="alternate" style="position: absolute; top: 18%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot180 title is-size-6" SCROLLAMOUNT="43" BEHAVIOR="alternate" style="position: absolute; top: 52%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot120 title is-size-6" SCROLLAMOUNT="94" BEHAVIOR="alternate" style="position: absolute; top: 74%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot60 title is-size-2" SCROLLAMOUNT="26" BEHAVIOR="alternate" style="position: absolute; top: 76%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot140 title is-size-4" SCROLLAMOUNT="2" BEHAVIOR="alternate" style="position: absolute; top: 27%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot140 title is-size-4" SCROLLAMOUNT="118" BEHAVIOR="alternate" style="position: absolute; top: 14%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot80 title is-size-5" SCROLLAMOUNT="35" BEHAVIOR="alternate" style="position: absolute; top: 64%;">Mourez Tous.</marquee><marquee class="blinkingrainbow0 rot40 title is-size-5" SCROLLAMOUNT="10" BEHAVIOR="alternate" style="position: absolute; top: 53%;">Mourez Tous.</marquee><marquee class="blinkingrainbow3 rot40 title is-size-4" SCROLLAMOUNT="117" BEHAVIOR="alternate" style="position: absolute; top: 32%;">Mourez Tous.</marquee><marquee class="blinkingrainbow1 rot40 title is-size-5" SCROLLAMOUNT="107" BEHAVIOR="alternate" style="position: absolute; top: 70%;">Mourez Tous.</marquee><marquee class="blinkingrainbow2 rot160 title is-size-3" SCROLLAMOUNT="18" BEHAVIOR="alternate" style="position: absolute; top: 70%;">Mourez Tous.</marquee>    </section>
 </section>
 </body>
 </html>
