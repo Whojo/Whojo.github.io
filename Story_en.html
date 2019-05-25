@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <title>Zelstrom</title>
@@ -9,221 +8,275 @@
     <meta name="keywords" content="Game, Unter the Gungeon, Rogue-Lite, Action-rpg">
     <meta name="author" content="Zelstrom">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    
+
     <link rel="stylesheet" href="Style/Helpers.css">
+
+    <style>
+        .is-paddingless-horizontal { padding-left: 0; padding-right: 0; }
+
+        .gridleft {
+            display: grid;
+            grid-template-columns:
+                    5% [main-start] 50% [main-end] 5% [image-start] 1fr [image-end] 5%;
+        }
+
+        .gridright {
+            display: grid;
+            grid-template-columns:
+                    5% [image-start] 1fr [image-end] 5% [main-start] 50% [main-end] 5%;
+        }
+
+
+        .gridleft *  { grid-column: main; }
+        .gridleft-image { grid-column: image; }
+
+
+        .gridright *  { grid-column: main; }
+        .gridright-image { grid-column: image; }
+
+    </style>
 </head>
 
 
 <body>
-<section class="hero background-main is-fullheight">
-    <!-- header -->
-    <section class="hero header has-background-black">
-        <div class="hero-head">
-            <div class="columns is-mobile is-marginless heading has-text-weight-bold">
-                <div class="column left">
-                    <figure class="navbar-item image">
-                        <img src="Style/Images/VRAILOGO.jpg" style="width: 2rem; height: 2rem;">
-                    </figure>
-                    <p class="navbar-item"><a href="home_en.html" class="has-text-white">Zéphyr</a></p>
-                </div>
-                <div class="column center">
-                    <p class="navbar-item desktop"><a href="Download_en.html" class="has-text-light">DOWNLOAD</a></p>
-                    <p class="navbar-item desktop"><a href="Gameplay_en.html" class="has-text-light">GAMEPLAY</a></p>
-                    <p class="navbar-item desktop"><a href="Scenario_en.html" class="has-text-light">SCENARIO</a></p>
-                    <p class="navbar-item desktop"><a href="Team_en.html" class="has-text-light">OUR TEAM</a></p>
-                    <p class="navbar-item desktop"><a href="Story_en.html" class="has-text-grey">OUR STORY</a></p>
-                    <p class="navbar-item desktop"><a href="Ressources_en.html" class="has-text-light">OUR RESSOURCES</a></p>
-                </div>
-                <div class="column right">
-                    <p class="navbar-item"><a href="Support_en.html" class="has-text-light">SUPPORT</a></p>
-                    <!--<p class="navbar-item has-text-white desktop">SHOP   </p>-->
-                    <p class="navbar-item"><a href="Sign_in_en.html" class="has-text-light">SIGN IN</a></p>
-                    <figure class="navbar-item image has-text-white center">
-                        <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
-                    </figure>
-                </div>
+<!-- header -->
+<section class="hero has-background-black">
+    <div class="hero-head">
+        <div class="columns is-mobile is-marginless heading has-text-weight-bold">
+            <div class="column left">
+                <figure class="navbar-item image">
+                    <img src="Style/Images/VRAILOGO.jpg" style="width: 2rem; height: 2rem;">
+                </figure>
+                <p class="has-text-white"><a href="home_en.html" style="color: #ffffff">Zéphyr</a></p>
+            </div>
+            <div class="column center">
+                <p class="navbar-item has-text-white desktop"><a href="Download_en.html" style="color: #ffffff">DOWNLOAD      </a></p>
+                <p class="navbar-item has-text-white desktop"><a href="Gameplay_en.html" style="color: #ffffff">GAMEPLAY      </a></p>
+                <p class="navbar-item has-text-white desktop"><a href="Scenario_en.html" style="color: #ffffff">SCENARIO      </a></p>
+                <p class="navbar-item has-text-white desktop"><a href="Team_en.html" style="color: #ffffff">OUR TEAM      </a></p>
+                <p class="navbar-item has-text-white desktop"><a href="Story_en.html" style="color: #ffffff">OUR STORY     </a></p>
+                <p class="navbar-item has-text-white desktop"><a href="Ressources_en.html" style="color: #ffffff">OUR RESSOURCES</a></p>
+            </div>
+            <div class="column right">
+                <p class="navbar-item has-text-white"><a href="Support_en.html" style="color: #ffffff">SUPPORT</a></p>
+                <!--<p class="navbar-item has-text-white desktop">SHOP   </p>-->
+                <p class="navbar-item has-text-white"><a href="Sign_in_en.html" style="color: #ffffff">SIGN IN</a></p>
+                <figure class="navbar-item image has-text-white center">
+                    <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
+                </figure>
             </div>
         </div>
-    </section>
-    
-    
-    
+    </div>
+</section>
+
+
 <!-- main -->
-    <section class="section main">
-        <div class="notification has-background-light gridleft">
-            <div class="gridleft-main has-text-centered">
-                <h1 class="title is-size-5">Week of January 7: The most important decision</h1>
-                <p>After deciding on the overall guidelines for the game. A majestic name was required. Zéphyr stood out from the crowd quite quickly as a game name. But the whole group did not agree on its spelling ("Zephyr" or "Zephyr"). Following a coin throw (wrongly dropped...), Zéphyr was born.</p>
-                <br></br>
-                <p>Then came the time to choose the name of the group. It was after long periods of intense reflection and multiple proposals that Maelström finally emerged. It was able to please the group with its original sound. However, we wanted this name to be closer to Zephyr. Thus the "Ma" of "Maelström" was transformed into "Ze" finally giving Zelstrom.</p>
-            </div>
-            <div class="gridleft-image has-text-centered">
-                <figure class="image card center" style="width:256px ;height: 256px; margin-left: auto; margin-right: auto">
-                    <img src="Image/CoinFlip.png">
-                </figure>
-            </div>
+<section class="section is-paddingless-horizontal" style="margin-top: 5%;">
+    <div class="notification has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5">Week of January 7: The most important decision</h1>
+            <p>After deciding on the overall guidelines for the game. A majestic name was required. Zéphyr stood out from the crowd quite quickly as a game name. But the whole group did not agree on its spelling ("Zéphyr" or "Zephyr"). Following a coin throw (wrongly dropped...), Zéphyr was born.</p>
+            <br></br>
+            <p>Then came the time to choose the name of the group. It was after long periods of intense reflection and multiple proposals that Maelström finally emerged. It was able to please the group with its original sound. However, we wanted this name to be closer to Zephyr. Thus the "Ma" of "Maelström" was transformed into "Ze" finally giving Zelstrom./p>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridright ">
-            <div class="gridright-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 195px; margin-left: auto; margin-right: auto;">
-                    <img src="Style/Images/VRAILOGO.jpg">
-                </figure>
-            </div>
-            <div class="gridright-main has-text-centered">
-                <h1 class="title is-size-5">Week of January 14th: BOOK OF SPECIFICATIONS</h1>
-                <p>The date of the rendering of the specifications is approaching seriously and there is still a lot of layout to be done. Most of the ideas and mechanics of our game were tuned and tuned up the previous week. After a weekend of intense writing. The specifications were completed on time and returned.</p>
-                <br></br>
-                <p>A major problem appeared: the choice of the logo.... For the sake of simplicity, the "Z" of "Zephyr" has stood out from the crowd. After a laborious installation of photoShop (legally, as you can rightly assume), the manipulation of the software proved to be complicated... The logo therefore took much longer than expected to be produced. But at the end of the evening, this one was over and suited us.</p>
-            </div>
+        <div class="gridleft-image has-text-centered">
+            <figure class="image card center" style="width:256px ;height: 256px; margin-left: auto; margin-right: auto">
+                <img src="Image/CoinFlip.png">
+            </figure>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridleft">
-            <div class="gridleft-main has-text-centered">
-                <h1 class="title is-size-5">Week of January 21: The Beginning</h1>
-                <p>This week marks the real beginning of the project. So we started planning everything. The tasks in our project have been divided into less complex subtasks and deadlines have been assigned to each of them. This seems to us to be an essential element in order to progress effectively and regularly.</p>
-                <br></br>
-                <p>Once that was done, we moved on to the concrete. The most basic scripts (character and camera movements) were created easily and quickly. The domain name of the site was purchased and the first html push file on the server.</p>
-                <br></br>
-                <p>The excitement of the final result makes us motivated and efficient.</p>
-            </div>
-            <div class="gridleft-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 160px; margin-left: auto; margin-right: auto">
-                    <img src="Image/PlayerAttacks.gif">
-                </figure>
-            </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 195px; margin-left: auto; margin-right: auto;">
+                <img src="Style/Images/VRAILOGO.jpg">
+            </figure>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridright ">
-            <div class="gridright-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 160px; margin-left: auto; margin-right: auto">
-                    <img src="Image/EnnemisMouvements.gif">
-                </figure>
-            </div>
-            <div class="gridright-main has-text-centered">
-                <h1 class="title is-size-5">Week of January 28: Finalization of the concept</h1>
-                <p>This week has not been very active in advancing the project.... (TD Math Test) We probably wasted too much time sharing our ideas.... But it still ensured that we all had the same design of the final game. </p>
-                <br></br>
-                <p>We have nevertheless made progress on the website, the character animation mechanics and the multiplayer connection.</p>
-            </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5">Week of January 14th: BOOK OF SPECIFICATIONS</h1>
+            <p>The date of the rendering of the specifications is approaching seriously and there is still a lot of layout to be done. Most of the ideas and mechanics of our game were tuned and tuned up the previous week. After a weekend of intense writing. The specifications were completed on time and returned.</p>
+            <br></br>
+            <p>A major problem appeared: the choice of the logo.... For the sake of simplicity, the "Z" of "Zephyr" has stood out from the crowd. After a laborious installation of photoShop (legally, as you can rightly assume), the manipulation of the software proved to be complicated... The logo therefore took much longer than expected to be produced. But at the end of the evening, this one was over and suited us.</p>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridleft">
-            <div class="gridleft-main has-text-centered">
-                <h1 class="title is-size-5">Week of February 11</h1>
-                <p>We just realized that the first defense was already in 3 weeks... The multi has started to be developed. Maybe it was a mistake to start it so late. The main page of the website is finished. The interface (mini map and life display) is under development. There is currently a rather funny bug with the mini map. Indeed, it moves with the movements of the player and the mouse. This is not very practical xD. Moving enemies to follow the player has been successfully implemented. </p>
-            </div>
-            <div class="gridleft-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 256px; margin-left: auto; margin-right: auto">
-                    <img src="Style/Images/VRAILOGO.jpg"><!-- Screenshot mini map-->
-                </figure>
-            </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5">Week of January 21: The Beginning</h1>
+            <p>This week marks the real beginning of the project. So we started planning everything. The tasks in our project have been divided into less complex subtasks and deadlines have been assigned to each of them. This seems to us to be an essential element in order to progress effectively and regularly.</p>
+            <br></br>
+            <p>Once that was done, we moved on to the concrete. The most basic scripts (character and camera movements) were created easily and quickly. The domain name of the site was purchased and the first html push file on the server.</p>
+            <br></br>
+            <p>The excitement of the final result makes us motivated and efficient.</p>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridright ">
-            <div class="gridright-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 140px; margin-left: auto; margin-right: auto">
-                    <img src="Image/Multi.gif">
-                </figure>
-            </div>
-            <div class="gridright-main has-text-centered">
-                <h1 class="title is-size-5">Week of February 18</h1>
-                <p>The main menu of the game and the settings menu have been implemented. The Minicard bug has been fixed, thanks to Philippe's talent ^^. Multiplayer mode has been implemented. It is now possible to play online. And the main page of the website was pushed.</p>
-            </div>
+        <div class="gridleft-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 160px; margin-left: auto; margin-right: auto">
+                <img src="Image/PlayerAttacks.gif">
+            </figure>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridleft">
-            <div class="gridleft-main has-text-centered">
-                <h1 class="title is-size-5">Week of February 25 </h1>
-                <p>It's the holidays, we rest (a little). Not too much either, we have midterms and a defense soon...</p>
-            </div>
-            <div class="gridleft-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 256px; margin-left: auto; margin-right: auto">
-                    <img src="Image/Resting.jpg">
-                </figure>
-            </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 160px; margin-left: auto; margin-right: auto">
+                <img src="Image/EnnemisMouvements.gif">
+            </figure>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridright ">
-            <div class="gridright-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 150px; margin-left: auto; margin-right: auto">
-                    <img src="Image/Exams.jpeg">
-                </figure>
-            </div>
-            <div class="gridright-main has-text-centered">
-                <h1 class="title is-size-5">Semaine du 4 mars : </h1>
-                <p>Despite the fact that the entire team has incredibly talented people, this week of exams prevented us from working properly on the project. Our review is on March 15 and time is running out. We made very little progress on the project this weekend, we mainly took this time to rest after the controls. </p>
-            </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5">Week of January 28: Finalization of the concept</h1>
+            <p>This week has not been very active in advancing the project.... (TD Math Test) We probably wasted too much time sharing our ideas.... But it still ensured that we all had the same design of the final game. </p>
+            <br></br>
+            <p>We have nevertheless made progress on the website, the character animation mechanics and the multiplayer connection.</p>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridleft">
-            <div class="gridleft-main has-text-centered">
-                <h1 class="title is-size-5">Week of March 11: 1st defense</h1>
-                <p>This week has been quite challenging. A lot of elements to implement were missing. So we had to work at a fairly steady pace, and entered into what is commonly called "rush", (or simply "I did it too late"). Like any self-respecting rush, the stress was real, but it must be admitted that the project has progressed a lot during this week. Enemies can take damage from the character (enemies, which by the way did not exist before this week), the menus are correctly implemented, we now has the possibility to play together, but above all, we finally have our first bugs!!!!! And that's beautiful:)</p>
-                <br></br>
-                <p>The defense, it went well overall, we came back to the different points we wanted to put forward. The main problem came from our presentation, but overall the result was quite acceptable!</p>
-            </div>
-            <div class="gridleft-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 160px; margin-left: auto; margin-right: auto">
-                    <img src="Image/PlayerAttacks.gif">
-                </figure>
-            </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5">Week of February 11</h1>
+            <p>We just realized that the first defense was already in 3 weeks... The multi has started to be developed. Maybe it was a mistake to start it so late. The main page of the website is finished. The interface (mini map and life display) is under development. There is currently a rather funny bug with the mini map. Indeed, it moves with the movements of the player and the mouse. This is not very practical xD. Moving enemies to follow the player has been successfully implemented. </p>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridright ">
-            <div class="gridright-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 256px; margin-left: auto; margin-right: auto">
-                    <img src="Image/Resting.jpg">
-                </figure>
-            </div>
-            <div class="gridright-main has-text-centered">
-                <h1 class="title is-size-5">Week of March 18 </h1>
-                <p>For obvious reasons of fle...uh...post-defense rest, this week has been unproductive, and the term little is a euphemism here, indeed, it is not just a little, but no work that has not been done for the great pleasure of Zelstrom's members!</p>
-            </div>
+        <div class="gridleft-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 256px; margin-left: auto; margin-right: auto">
+                <img src="Style/Images/VRAILOGO.jpg"><!-- Screenshot mini map-->
+            </figure>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridleft">
-            <div class="gridleft-main has-text-centered">
-                <h1 class="title is-size-5">Week of March 25 </h1>
-                <p>The progress of the project is still being ignored during this week. It is very pleasant to rest and not touch the project for a while.</p>
-            </div>
-            <div class="gridleft-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 256px; margin-left: auto; margin-right: auto">
-                    <img src="Image/Resting.jpg">
-                </figure>
-            </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 140px; margin-left: auto; margin-right: auto">
+                <img src="Image/Multi.gif">
+            </figure>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridright ">
-            <div class="gridright-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 140px; margin-left: auto; margin-right: auto">
-                    <img src="Image/TheTeam.png">
-                </figure>
-            </div>
-            <div class="gridright-main has-text-centered">
-                <h1 class="title is-size-5">Week of April 1st: </h1>
-                <p>All good things come to an end. And this week marked the end of our project strike. Nevertheless, after these two weeks of breaks, the team is in good shape (or at least partially) to tackle back the project!</p>
-                <br></br>
-                <p>Work on fixing bugs has begun and the addition of new characters and weapons shows that Zephyr is on the right track!</p>
-            </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5">Week of February 18</h1>
+            <p>The main menu of the game and the settings menu have been implemented. The Minicard bug has been fixed, thanks to Philippe's talent ^^. Multiplayer mode has been implemented. It is now possible to play online. And the main page of the website was pushed.</p>
         </div>
-        <div><br></br></div>
-        <div class="notification has-background-light gridleft">
-            <div class="gridleft-main has-text-centered">
-                <h1 class="title is-size-5">Week of April 8 </h1>
-                <p>Multiplayer problems have been discovered in the game. The origin of the problem has been authenticated, however, it is still difficult to solve them. Apart from that, the various parties have not made much progress apart from correcting some of the disadvantages. Life interfaces have also been added.</p>
-            </div>
-            <div class="gridleft-image has-text-centered">
-                <figure class="image card" style="width:256px ;height: 180px; margin-left: auto; margin-right: auto">
-                    <img src="Image/Vie.gif">
-                </figure>
-            </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5">Week of February 25 </h1>
+            <p>It's the holidays, we rest (a little). Not too much either, we have midterms and a defense soon...</p>
         </div>
-        <div><br></br></div>
-        
+        <div class="gridleft-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 256px; margin-left: auto; margin-right: auto">
+                <img src="Image/Resting.jpg">
+            </figure>
+        </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 150px; margin-left: auto; margin-right: auto">
+                <img src="Image/Exams.jpeg">
+            </figure>
+        </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5">Week of March 4 : </h1>
+            <p>Despite the fact that the entire team has incredibly talented people, this week of exams prevented us from working properly on the project. Our review is on March 15 and time is running out. We made very little progress on the project this weekend, we mainly took this time to rest after the controls. </p>
+        </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5">Week of March 11: 1st defense</h1>
+            <p>This week has been quite challenging. A lot of elements to implement were missing. So we had to work at a fairly steady pace, and entered into what is commonly called "rush", (or simply "I did it too late"). Like any self-respecting rush, the stress was real, but it must be admitted that the project has progressed a lot during this week. Enemies can take damage from the character (enemies, which by the way did not exist before this week), the menus are correctly implemented, we now has the possibility to play together, but above all, we finally have our first bugs!!!!! And that's beautiful:)</p>
+            <br></br>
+            <p>The defense, it went well overall, we came back to the different points we wanted to put forward. The main problem came from our presentation, but overall the result was quite acceptable!</p>
+        </div>
+        <div class="gridleft-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 160px; margin-left: auto; margin-right: auto">
+                <img src="Image/PlayerAttacks.gif">
+            </figure>
+        </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 256px; margin-left: auto; margin-right: auto">
+                <img src="Image/Resting.jpg">
+            </figure>
+        </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5">Week of March 18 </h1>
+            <p>For obvious reasons of fle...uh...post-defense rest, this week has been unproductive, and the term little is a euphemism here, indeed, it is not just a little, but no work that has not been done for the great pleasure of Zelstrom's members!</p>
+        </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5">Week of March 25 </h1>
+            <p>The progress of the project is still being ignored during this week. It is very pleasant to rest and not touch the project for a while.</p>
+        </div>
+        <div class="gridleft-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 256px; margin-left: auto; margin-right: auto">
+                <img src="Image/Resting.jpg">
+            </figure>
+        </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 140px; margin-left: auto; margin-right: auto">
+                <img src="Image/TheTeam.png">
+            </figure>
+        </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5">Week of April 1st: </h1>
+            <p>All good things come to an end. And this week marked the end of our project strike. Nevertheless, after these two weeks of breaks, the team is in good shape (or at least partially) to tackle back the project!</p>
+            <br></br>
+            <p>Work on fixing bugs has begun and the addition of new characters and weapons shows that Zephyr is on the right track!</p>
+        </div>
+    </div>
+    <div><br></br></div>
+    <div class="notification has-background-light gridleft">
+        <div class="gridleft-main has-text-centered">
+            <h1 class="title is-size-5">Week of April 8 </h1>
+            <p>Multiplayer problems have been discovered in the game. The origin of the problem has been authenticated, however, it is still difficult to solve them. Apart from that, the various parties have not made much progress apart from correcting some of the disadvantages. Life interfaces have also been added.</p>
+        </div>
+        <div class="gridleft-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 180px; margin-left: auto; margin-right: auto">
+                <img src="Image/Vie.gif">
+            </figure>
+        </div>
+    </div>
+    <div><br></br></div>
+	<div class="notification has-background-light gridright ">
+        <div class="gridright-image has-text-centered">
+            <figure class="image card" style="width:256px ;height: 140px; margin-left: auto; margin-right: auto">
+                <img src="Image/TheTeam.png">
+            </figure>
+        </div>
+        <div class="gridright-main has-text-centered">
+            <h1 class="title is-size-5">Week of April 15: </h1>
+            <p>This week was not very successful, it was our week of vacation, and by definition in vacation period,
+			we have to rest, something we followed very well.</p>
+            <br></br>
+            <p>We still advanced the project during this weekend (reluctantly), after all, the second defense is
+			approaching very quickly, we will be defending our project next Thursday.</p>
+        </div>
+    </div>
+    <div><br></br></div>
+	<div class="notification has-background-light gridleft">
+		<div class="gridleft-main has-text-centered">
+			<h1 class="title is-size-5">Week of April 22: </h1>
+			<p>Since once is not the norm, we go back to the RUSH period (Yaayyy)! Given our stubbornness to persevere
+			in error there is no doubt that the evil act we have committed is really terrifying (or not). The project has
+			progressed well during this week, the maps are finally appearing, problems related to multiplayer have been resolved,
+			weapons and enemies have been implemented and it is now possible to choose one's character! The project has progressed in a good way!</p>
+		</div>
+		<div class="gridleft-image has-text-centered">
+			<figure class="image card" style="width:256px ;height: 180px; margin-left: auto; margin-right: auto">
+				<img src="Image/Vie.gif">
+			</figure>
+		</div>
+	</div>
+	<div><br></br></div>
+
     <!--
 <div class="notification has-background-light gridright ">
     <div class="gridright-image has-text-centered">
@@ -249,7 +302,6 @@
     </div>
 </div>
 -->
-    </section>
 </section>
 </body>
 </html>

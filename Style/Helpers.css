@@ -63,6 +63,15 @@
 }
 
 
+.tab {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+
 .is-paddingless-horizontal { padding-left: 0; padding-right: 0; }
 
 .gridleft {
