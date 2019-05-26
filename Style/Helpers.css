@@ -33,6 +33,13 @@
         display: none;
     }
 }
+
+@media (min-width: 1024px) {
+    .mobile{
+        display : none;
+    }
+}
+
 .anim {
     transform: rotate(180deg);
     animation: 15s infinite;
