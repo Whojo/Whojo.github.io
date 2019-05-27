@@ -9,10 +9,15 @@
     <meta name="keywords" content="Game, Unter the Gungeon, Rogue-Lite, Action-rpg">
     <meta name="author" content="Zelstrom">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="Style/Helpers.css">
 </head>
 
@@ -24,8 +29,21 @@
         <div class="hero-head">
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left">
-                    <figure class="navbar-item image">
+                    <figure class="navbar-item image desktop">
                         <img src="Style/Images/VRAILOGO.jpg" style="width: 2rem; height: 2rem;">
+                    </figure>
+                    <figure class="navbar-item has-text-white center mobile">
+                        <div class="dropdown">
+                            <i class="fas fa-bars dropdown-toggle" style="width: 1rem; height: 1rem;cursor: pointer;" data-toggle="dropdown"></i>
+                            <div class="dropdown-menu has-background-black">
+                                <p class="navbar-item heading has-text-weight-bold"><a href="Download_en.html" class="has-text-light">DOWNLOAD</a></p>
+                                <p class="navbar-item heading has-text-weight-bold"><a href="Gameplay_en.html" class="has-text-light">GAMEPLAY</a></p>
+                                <p class="navbar-item heading has-text-weight-bold"><a href="Scenario_en.html" class="has-text-light">SCENARIO</a></p>
+                                <p class="navbar-item heading has-text-weight-bold"><a href="Team_en.html" class="has-text-light">OUR TEAM</a></p>
+                                <p class="navbar-item heading has-text-weight-bold"><a href="Story_en.html" class="has-text-light">OUR STORY</a></p>
+                                <p class="navbar-item heading has-text-weight-bold"><a href="Ressources_en.html" class="has-text-light">OUR RESSOURCES</a></p>
+                            </div>
+                        </div>
                     </figure>
                     <p class="navbar-item"><a href="home_en.html" class="has-text-white">Zéphyr</a></p>
                 </div>
@@ -41,9 +59,6 @@
                     <p class="navbar-item"><a href="Support_en.html" class="has-text-grey">SUPPORT</a></p>
                     <!--<p class="navbar-item has-text-white desktop">SHOP   </p>-->
                     <p class="navbar-item"><a href="Sign_in_en.html" class="has-text-light">SIGN IN</a></p>
-                    <figure class="navbar-item image has-text-white center">
-                        <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
-                    </figure>
                 </div>
             </div>
         </div>
