@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10224c0d-9e5a-4df1-8c02-7a76ffa0e9ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Style/Images/Main_Background.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Whojo.github.io.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Whojo.github.io.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Download_en.html" beforeDir="false" afterPath="$PROJECT_DIR$/Download_en.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Download_fr.html" beforeDir="false" afterPath="$PROJECT_DIR$/Download_fr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Image/TheTeam.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Story_en.html" beforeDir="false" afterPath="$PROJECT_DIR$/Story_en.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Story_fr.html" beforeDir="false" afterPath="$PROJECT_DIR$/Story_fr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Style/Helpers.css" beforeDir="false" afterPath="$PROJECT_DIR$/Style/Helpers.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Style/Images/TheTeam.png" beforeDir="false" afterPath="$PROJECT_DIR$/Style/Images/TheTeam.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home_en.html" beforeDir="false" afterPath="$PROJECT_DIR$/home_en.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home_fr.html" beforeDir="false" afterPath="$PROJECT_DIR$/home_fr.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,16 +13,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Download_en.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="110" column="29" lean-forward="true" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
+            <state relative-caret-position="281">
+              <caret line="122" column="62" selection-start-line="122" selection-start-column="62" selection-end-line="122" selection-end-column="62" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#figure#0;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#div#0;n#figure#1;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#figure#0;n#section#0;n#div#1;n#section#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -65,7 +65,6 @@
       <list>
         <option value="$PROJECT_DIR$/../../test.py" />
         <option value="$PROJECT_DIR$/MourezTous.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Team_fr.html" />
         <option value="$PROJECT_DIR$/Gameplay_fr.html" />
         <option value="$PROJECT_DIR$/Ressources_fr.html" />
@@ -83,8 +82,9 @@
         <option value="$PROJECT_DIR$/home_fr.html" />
         <option value="$PROJECT_DIR$/Story_en.html" />
         <option value="$PROJECT_DIR$/Style/Helpers.css" />
-        <option value="$PROJECT_DIR$/Download_en.html" />
         <option value="$PROJECT_DIR$/Download_fr.html" />
+        <option value="$PROJECT_DIR$/Download_en.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -173,12 +173,12 @@
       <workItem from="1558776450082" duration="14988000" />
       <workItem from="1559503585709" duration="1119000" />
       <workItem from="1559504779745" duration="241000" />
-      <workItem from="1559676728514" duration="4522000" />
+      <workItem from="1559676728514" duration="5689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27938000" />
+    <option name="totallyTimeSpent" value="29105000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -240,13 +240,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/Downloads/Story_fr.html" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MourezTous.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -455,13 +448,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Download_en.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="110" column="29" lean-forward="true" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
+        <state relative-caret-position="281">
+          <caret line="122" column="62" selection-start-line="122" selection-start-column="62" selection-end-line="122" selection-end-column="62" />
           <folding>
             <element signature="n#style#0;n#img#0;n#figure#0;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#div#0;n#figure#1;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#figure#0;n#section#0;n#div#1;n#section#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
         </state>
       </provider>
     </entry>
