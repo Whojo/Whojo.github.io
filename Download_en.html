@@ -1,153 +1,214 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <title>Zelstrom</title>
-    <meta charset="UTF-8">
-    <link rel="icon" href="Style/Images/VRAILOGO.jpg">
-    <meta name="description" content="Zephyr : Rogue-lite, Action-rpg">
-    <meta name="keywords" content="Game, Unter the Gungeon, Rogue-Lite, Action-rpg">
-    <meta name="author" content="Zelstrom">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <html lang="en">
+    <head>
+        <title>Zelstrom</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="Style/Images/VRAILOGO.jpg">
+        <meta name="description" content="Zephyr : Rogue-lite, Action-rpg">
+        <meta name="keywords" content="Game, Unter the Gungeon, Rogue-Lite, Action-rpg">
+        <meta name="author" content="Zelstrom">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+        
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="Style/Helpers.css">
+    </head>
     
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
-    <link rel="stylesheet" href="Style/Helpers.css">
-</head>
-
-
-<body>
-<section class="hero background-main is-fullheight">
-    <!-- header -->
-    <section class="hero header has-background-black">
-        <div class="hero-head">
-            <div class="columns is-mobile is-marginless heading has-text-weight-bold">
-                <div class="column left">
-                    <figure class="navbar-item image desktop">
-                        <img src="Style/Images/VRAILOGO.jpg" style="width: 2rem; height: 2rem;">
-                    </figure>
-                    <figure class="navbar-item has-text-white center mobile">
-                        <div class="dropdown">
-                            <i class="fas fa-bars dropdown-toggle" style="width: 1rem; height: 1rem;cursor: pointer;" data-toggle="dropdown"></i>
-                            <div class="dropdown-menu has-background-black">
-                                <p class="navbar-item heading has-text-weight-bold"><a href="Download_en.html" class="has-text-light">DOWNLOAD</a></p>
-                                <p class="navbar-item heading has-text-weight-bold"><a href="Gameplay_en.html" class="has-text-light">GAMEPLAY</a></p>
-                                <p class="navbar-item heading has-text-weight-bold"><a href="Scenario_en.html" class="has-text-light">SCENARIO</a></p>
-                                <p class="navbar-item heading has-text-weight-bold"><a href="Team_en.html" class="has-text-light">OUR TEAM</a></p>
-                                <p class="navbar-item heading has-text-weight-bold"><a href="Story_en.html" class="has-text-light">OUR STORY</a></p>
-                                <p class="navbar-item heading has-text-weight-bold"><a href="Ressources_en.html" class="has-text-light">OUR RESSOURCES</a></p>
+    <body>
+    <section class="hero background-main is-fullheight">
+        <!-- header -->
+        <section class="hero header has-background-black">
+            <div class="hero-head">
+                <div class="columns is-mobile is-marginless heading has-text-weight-bold">
+                    <div class="column left">
+                        <figure class="navbar-item image desktop">
+                            <img src="Style/Images/VRAILOGO.jpg" style="width: 2rem; height: 2rem;">
+                        </figure>
+                        <figure class="navbar-item has-text-white center mobile">
+                            <div class="dropdown">
+                                <i class="fas fa-bars dropdown-toggle" style="width: 1rem; height: 1rem;cursor: pointer;" data-toggle="dropdown"></i>
+                                <div class="dropdown-menu has-background-black">
+                                    <p class="navbar-item heading has-text-weight-bold"><a href="Download_en.html" class="has-text-light">DOWNLOAD</a></p>
+                                    <p class="navbar-item heading has-text-weight-bold"><a href="Gameplay_en.html" class="has-text-light">GAMEPLAY</a></p>
+                                    <p class="navbar-item heading has-text-weight-bold"><a href="Scenario_en.html" class="has-text-light">SCENARIO</a></p>
+                                    <p class="navbar-item heading has-text-weight-bold"><a href="Team_en.html" class="has-text-light">OUR TEAM</a></p>
+                                    <p class="navbar-item heading has-text-weight-bold"><a href="Story_en.html" class="has-text-light">OUR STORY</a></p>
+                                    <p class="navbar-item heading has-text-weight-bold"><a href="Ressources_en.html" class="has-text-light">OUR RESSOURCES</a></p>
+                                </div>
                             </div>
-                        </div>
-                    </figure>
-                    <p class="navbar-item"><a href="home_en.html" class="has-text-white">Zéphyr</a></p>
-                </div>
-                <div class="column center">
-                    <p class="navbar-item desktop"><a href="Download_en.html" class="has-text-grey">DOWNLOAD</a></p>
-                    <p class="navbar-item desktop"><a href="Gameplay_en.html" class="has-text-light">GAMEPLAY</a></p>
-                    <p class="navbar-item desktop"><a href="Scenario_en.html" class="has-text-light">SCENARIO</a></p>
-                    <p class="navbar-item desktop"><a href="Team_en.html" class="has-text-light">OUR TEAM</a></p>
-                    <p class="navbar-item desktop"><a href="Story_en.html" class="has-text-light">OUR STORY</a></p>
-                    <p class="navbar-item desktop"><a href="Ressources_en.html" class="has-text-light">OUR RESSOURCES</a></p>
-                </div>
-                <div class="column right">
-                    <p class="navbar-item"><a href="Support_en.html" class="has-text-light">SUPPORT</a></p>
-                    <!--<p class="navbar-item has-text-white desktop">SHOP   </p>-->
-                    <p class="navbar-item"><a href="Sign_in_en.html" class="has-text-light">SIGN IN</a></p>
+                        </figure>
+                        <p class="navbar-item"><a href="home_en.html" class="has-text-white">Zéphyr</a></p>
+                    </div>
+                    <div class="column center">
+                        <p class="navbar-item desktop"><a href="Download_en.html" class="has-text-grey">DOWNLOAD</a></p>
+                        <p class="navbar-item desktop"><a href="Gameplay_en.html" class="has-text-light">GAMEPLAY</a></p>
+                        <p class="navbar-item desktop"><a href="Scenario_en.html" class="has-text-light">SCENARIO</a></p>
+                        <p class="navbar-item desktop"><a href="Team_en.html" class="has-text-light">OUR TEAM</a></p>
+                        <p class="navbar-item desktop"><a href="Story_en.html" class="has-text-light">OUR STORY</a></p>
+                        <p class="navbar-item desktop"><a href="Ressources_en.html" class="has-text-light">OUR RESSOURCES</a></p>
+                    </div>
+                    <div class="column right">
+                        <p class="navbar-item"><a href="Support_en.html" class="has-text-light">SUPPORT</a></p>
+                        <!--<p class="navbar-item has-text-white desktop">SHOP   </p>-->
+                        <p class="navbar-item"><a href="Sign_in_en.html" class="has-text-light">SIGN IN</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    
-    
-<!-- main -->
-    <section class="section main">
-        <div class="desktop notification has-background-light">
-            <div class="gridright is-paddingless-horizontal">
-                <div class="gridright-image">
-                    <section class="section">
-                        <figure class="image card" style="width:256px ;height: 195px;">
-                            <img src="Style/Images/VRAILOGO.jpg">
-                        </figure>
+        </section>
+        
+        
+        
+    <!-- main -->
+        <section class="section main">
+            <div class="desktop notification has-background-light">
+                <div class="gridright is-paddingless-horizontal">
+                    <div class="gridright-image">
+                        <section class="section">
+                            <figure class="image card" style="width:256px ;height: 195px;">
+                                <img src="Style/Images/VRAILOGO.jpg">
+                            </figure>
+                            <div>
+                                <p><br></br><u>Platform:</u></p>
+                                <p class="has-text-grey">Windows, Mac OS X</p>
+                                <p><u>Released:</u></p>
+                                <p>June 15, 2019</p>
+                                <p><u>Developper Team:</u></p>
+                                <p>Zelstrom<br></br></p>
+                            </div>
+                            
+                            <figure class="image card is-64x64">
+                                <img src="Image/Pegi.jpg">
+                            </figure>
+                        </section>
+                    </div>
+                    <div class="gridright-main">
+                        <h1 class="title is-size-5">Download</h1>
+                        <p>Zéphyr is an action-RPG focusing on exploration in order to bring
+                            you a new gaming experience. Through the levels, your skills will be tested
+                            by fighting the worst ennemies the world has never known, by taking ratial decision
+                            in the shops, by defeating bosses and above all by surviving!<br></br>
+                        </p>
+                        <div class="columns is-mobile is-marginless">
+                            <div class="column right">
+                                <a class="button" href="Style/Images/VRAILOGO.jpg" download><!-- add here the link to download the game-->
+                                    Download for Windows
+                                </a>
+                            </div>
+                            <div class="column left">
+                                <a class="button" href="Style/Images/VRAILOGO.jpg" download><!-- add here the link to download the game-->
+                                    Download for Mac OS X
+                                </a>
+                            </div>
+                        </div><hr>
                         <div>
-                            <p><br></br><u>Platform:</u></p>
-                            <p class="has-text-grey">Windows, Mac OS X</p>
-                            <p><u>Released:</u></p>
-                            <p>June 15, 2019</p>
-                            <p><u>Developper Team:</u></p>
-                            <p>Zelstrom<br></br></p>
-                        </div>
-                        
-                        <figure class="image card is-64x64">
-                            <img src="Image/Pegi.jpg">
-                        </figure>
-                    </section>
-                </div>
-                <div class="gridright-main">
-                    <h1 class="title is-size-5">Download</h1>
-                    <p>Zéphyr is an action-RPG focusing on exploration in order to bring
-                        you a new gaming experience. Through the levels, your skills will be tested
-                        by fighting the worst ennemies the world has never known, by taking ratial decision
-                        in the shops, by defeating bosses and above all by surviving!<br></br>
-                    </p>
-                    <div class="columns is-mobile is-marginless">
-                        <div class="column right">
-                            <a class="button" href="Style/Images/VRAILOGO.jpg" download><!-- add here the link to download the game-->
-                                Download for Windows
-                            </a>
-                        </div>
-                        <div class="column left">
-                            <a class="button" href="Style/Images/VRAILOGO.jpg" download><!-- add here the link to download the game-->
-                                Download for Mac OS X
-                            </a>
+                            <h1 class="title is-size-5">Documentation</h1>
+                            <p>
+                                Below are all the administrative documents that trace the progress of the project.
+                            </p>
+                            <div class="columns is-mobile is-marginless">
+                                <div class="column right">
+                                    <div class="section">
+                                        <a class="button center spaced" href="File/Cahier_des_charges.pdf" download>
+                                            Specification document
+                                        </a>
+                                        <a class="button center spaced" href="File/Rapport_de_soutenance_1ere_soutenance.pdf" download>
+                                            Report of the 1st Defence
+                                        </a>
+                                        <a class="button center spaced" href="File/Manuel_d_utilisation.pdf" download>
+                                            User manual
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="column left">
+                                    <div class="section">
+                                        <a class="button center spaced" href="File/Rapport_de_projet.pdf" download>
+                                            Project report
+                                        </a>
+                                        <a class="button center spaced" href="File/Rapport_de_soutenance_2e_soutenance.pdf" download>
+                                            Report of the 2nd Defence
+                                        </a>
+                                        <a class="button center spaced" href="File/Manuel_d_installation.pdf" download>
+                                            Installation manual
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-        <div class="mobile notification has-background-light">
-            <section class="section">
-                <h1 class="title is-size-5 center">Download</h1>
-                <figure class="image card" style="width:256px ;height: 195px;margin-left: auto;margin-right: auto">
-                    <img src="Style/Images/VRAILOGO.jpg">
-                </figure>
-                <p>
+            
+            
+            <div class="mobile notification has-background-light">
+                <section class="section">
+                    <h1 class="title is-size-5 center">Download</h1>
+                    <figure class="image card" style="width:256px ;height: 195px;margin-left: auto;margin-right: auto">
+                        <img src="Style/Images/VRAILOGO.jpg">
+                    </figure>
+                    <p>
+                        <br></br>
+                        Zéphyr is an action-RPG focusing on exploration in order to bring
+                        you a new gaming experience. Through the levels, your skills will be tested
+                        by fighting the worst ennemies the world has never known, by taking ratial decision
+                        in the shops, by defeating bosses and above all by surviving!<br></br>
+                    </p>
+                    <a class="button center spaced" href="Style/Images/VRAILOGO.jpg" download><!-- add here the link to download the game-->
+                        Download for Windows
+                    </a>
+                    <a class="button center spaced" href="Style/Images/VRAILOGO.jpg" download><!-- add here the link to download the game-->
+                        Download for Mac OS X
+                    </a>
+                    <div>
+                        <p><br></br><u>Platform:</u></p>
+                        <p class="has-text-grey">Windows, Mac OS X</p>
+                        <p><u>Released:</u></p>
+                        <p>June 15, 2019</p>
+                        <p><u>Developper Team:</u></p>
+                        <p>Zelstrom<br></br></p>
+                    </div>
+                    
+                    <figure class="image card is-64x64">
+                        <img src="Image/Pegi.jpg">
+                    </figure>
                     <br></br>
-                    Zéphyr is an action-RPG focusing on exploration in order to bring
-                    you a new gaming experience. Through the levels, your skills will be tested
-                    by fighting the worst ennemies the world has never known, by taking ratial decision
-                    in the shops, by defeating bosses and above all by surviving!<br></br>
-                </p>
-                <a class="button center" href="Style/Images/VRAILOGO.jpg" download><!-- add here the link to download the game-->
-                    Download for Windows
-                </a>
-                <br></br>
-                <a class="button center" href="Style/Images/VRAILOGO.jpg" download><!-- add here the link to download the game-->
-                    Download for Mac OS X
-                </a>
-                <div>
-                    <p><br></br><u>Platform:</u></p>
-                    <p class="has-text-grey">Windows, Mac OS X</p>
-                    <p><u>Released:</u></p>
-                    <p>June 15, 2019</p>
-                    <p><u>Developper Team:</u></p>
-                    <p>Zelstrom<br></br></p>
-                </div>
-
-                <figure class="image card is-64x64">
-                    <img src="Image/Pegi.jpg">
-                </figure>
-            </section>
-        </div>
+                    <hr>
+                    <div>
+                        <h1 class="title is-size-5">Documentation</h1>
+                        <p>
+                            Below are all the administrative documents that trace the progress of the project.
+                        </p>
+                        <div class="section">
+                            <a class="button center spaced" href="File/Cahier_des_charges.pdf" download>
+                                Cahier des Charges
+                            </a>
+                            <a class="button center spaced" href="File/Rapport_de_soutenance_1ere_soutenance.pdf" download>
+                                Rapport de 1ère Soutenance
+                            </a>
+                            <a class="button center spaced" href="File/Rapport_de_soutenance_2e_soutenance.pdf" download>
+                                Rapport de 2ème Soutenance
+                            </a>
+                            <a class="button center spaced" href="File/Rapport_de_projet.pdf" download>
+                                Rapport de projet
+                            </a>
+                            <a class="button center spaced" href="File/Manuel_d_utilisation.pdf" download>
+                                Manuel d'utilisation
+                            </a>
+                            <a class="button center spaced" href="File/Manuel_d_installation.pdf" download>
+                                Manuel d'installation
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
     </section>
-</section>
-</body>
-</html>
+    </body>
+    </html>

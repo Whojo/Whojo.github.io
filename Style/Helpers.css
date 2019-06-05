@@ -48,8 +48,28 @@
     margin-top: 32%;
 }
 
+hr {
+     border: 0;
+     clear:both;
+     display:block;
+     width: 96%;
+     background-color:#000000;
+     height: 1px;
+ }
+
+.spaced{
+    margin: 10px 0;
+}
+
 .background-main {
     background: url(Images/TheTeam.png) center / cover;
+    /*position: fixed;*/
+    background-attachment: fixed;
+    z-index: 3;
+}
+
+.background-main-main {
+    background: url(Images/Main_Background.png) center / cover;
     /*position: fixed;*/
     background-attachment: fixed;
     z-index: 3;
