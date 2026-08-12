@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GARL: Grasp-Aware Reinforcement Learning for Robust and Dexterous In-Hand Rotation</title>
+	<meta name="description" content="GARL: Grasp-Aware Reinforcement Learning for Robust and Dexterous In-Hand Rotation">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+	<style>
+		body {
+			font-family: "Helvetica Neue", Arial, sans-serif;
+			color: #222;
+		}
+
+		.header {
+			padding-top: 4rem;
+			padding-bottom: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		a:link, a:visited {
+			color: #0071bc;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #208799;
+		}
+
+		hr {
+			border: 0;
+			height: 1px;
+			background-image: linear-gradient(to right, rgba(0, 113, 188, 0.2), rgba(0, 0, 0, 0.1), rgba(0, 113, 188, 0.2));
+			margin: 2.5rem 0;
+		}
+
+		.gap-30 {
+			height: 30px;
+		}
+
+		.gap-20 {
+			height: 20px;
+		}
+
+		.gap-10 {
+			height: 10px;
+		}
+
+		.btn-dark {
+			background-color: #222;
+			border-color: #222;
+			margin: 0 0.2rem;
+		}
+
+		.btn-dark:hover {
+			background-color: #0071bc;
+			border-color: #0071bc;
+		}
+
+		.abstract {
+			width: 82%;
+			text-align: justify;
+			margin: 0 auto;
+		}
+
+		.keywords {
+			width: 82%;
+			text-align: center;
+			margin: 0 auto;
+			color: #555;
+		}
+
+		figure {
+			text-align: center;
+			margin: 0;
+		}
+
+		figure img {
+			max-width: 100%;
+			border-radius: 6px;
+			border: 1px solid #eee;
+		}
+
+		figcaption {
+			width: 88%;
+			text-align: justify;
+			margin: 1rem auto 0 auto;
+			font-size: 0.95rem;
+			color: #333;
+		}
+
+		figcaption b {
+			color: #000;
+		}
+
+		.highlights {
+			width: 82%;
+			margin: 0 auto;
+			text-align: justify;
+		}
+
+		.affiliations {
+			text-align: center;
+			font-size: 14px;
+			color: #444;
+		}
+
+		pre.bibtex {
+			background-color: #f4f4f4;
+			padding: 1.2rem;
+			border-radius: 6px;
+			font-size: 0.85rem;
+			overflow-x: auto;
+		}
+	</style>
+</head>
+<body>
+
+<div class="header">
+	<div class="container">
+		<center>
+			<h1 style="font-size: 2.1rem;">GARL: Grasp-Aware Reinforcement Learning for Robust and Dexterous In-Hand
+				Rotation</h1>
+		</center>
+		<div class="gap-20"></div>
+
+		<center>
+			<span style="font-size: 18px">Guillaume Thomas</span><sup style="font-size:13px">1,2</sup>,
+			<span style="font-size: 18px">Jaonary Rabarisoa</span><sup style="font-size:13px">1</sup>,
+			<span style="font-size: 18px">David Filliat</span><sup style="font-size:13px">3,4</sup>,
+			<span style="font-size: 18px">Quoc Cuong Pham</span><sup style="font-size:13px">1</sup>,
+			<span style="font-size: 18px">Mathieu Grossard</span><sup style="font-size:13px">1,2</sup>
+		</center>
+
+		<div class="gap-10"></div>
+
+		<div class="affiliations">
+			<sup>1</sup>CEA List, Bd Thomas Gobert, Palaiseau, France &nbsp;&middot;&nbsp;
+			<sup>2</sup>Universit&eacute; Paris-Saclay, Gif-sur-Yvette, France<br>
+			<sup>3</sup>ENSTA, Bd des Mar&eacute;chaux, Palaiseau, France &nbsp;&middot;&nbsp;
+			<sup>4</sup>Agence minist&eacute;rielle pour l'intelligence artificielle de d&eacute;fense, Paris, France
+		</div>
+
+		<div class="gap-20"></div>
+
+		<center>
+			<div class="btn-group" role="group">
+				<a href="GARL.pdf" target="_blank">
+					<button type="button" class="btn btn-dark">
+						<span class="icon"><i class="fas fa-file-pdf"></i> Paper</span>
+					</button>
+				</a>
+			</div>
+		</center>
+	</div>
+</div>
+
+<div class="container">
+
+	<hr>
+	<center>
+		<h2>Abstract</h2>
+		<p class="abstract">
+			Dexterous multi-fingered hands on robotic arms are often subject to varying orientations and
+			accelerations, yet most reinforcement learning (RL) methods for in-hand manipulation assume a fixed
+			hand pose, limiting robustness and generalization. Our approach incorporates both object-related and
+			hand-related considerations within a RL pipeline (Proximal Policy Optimization in our case) to achieve
+			desired behaviors for dexterous manipulation tasks. It targets key aspects of multifingered grasps
+			through quantitative measures of guaranteed stability, controllability, and manipulability. This
+			enables a comprehensive analysis of the learned policies, characterizing the safety margin against
+			undesired grasp configurations. It favors finger-gaiting sequences characterized by
+			perturbation-invariant in-hand rotation with up to 12&times; fewer training steps and improves
+			generalization to unseen perturbation intensities by 25&times;. The approach also enhances task
+			performance by 18.1% and reduces average joint torques by 26.7%. Object generalization experiments
+			demonstrate that our method provides consistent and reliable training outcomes. These simulation-only
+			results bring the required robustness for future real-world deployment on humanoid robots.
+		</p>
+		<p class="keywords"><i>Keywords: Dexterous Manipulation &middot; In-Hand Manipulation &middot;
+			Reinforcement Learning</i></p>
+	</center>
+
+	<hr>
+	<h3 style="text-align: center">Overview of the GARL Pipeline</h3>
+	<div class="gap-10"></div>
+	<figure>
+		<img src="img/figure1.png" alt="Overview of the GARL pipeline">
+		<figcaption>
+			<b>Figure 1. Overview of the GARL Pipeline.</b> Our approach augments standard reinforcement learning
+			rewards for <i>Manipulation</i> (r<sub>task</sub>, r<sub>sim2real</sub>) with analytical metrics
+			derived from robotic grasping theory to improve robustness and manipulability. In (A) grasps are
+			represented in 2D from the top for simplicity. In (B) the workspace of the index finger is represented
+			and split in two: one part shows the manipulability metric, ranging from yellow (near singular) to red
+			(high manipulability). The other half of the workspace is shaded in grey for visualization.
+		</figcaption>
+	</figure>
+
+	<hr>
+	<h3 style="text-align: center">Highlights</h3>
+	<div class="gap-10"></div>
+	<div class="highlights">
+		<ul>
+			<li>Desirable quantitative measures of guaranteed object stability, internal-force controllability and
+				manipulability are incorporated into dedicated rewards, enabling a comprehensive analysis of the
+				learned policies against undesired grasp configurations.
+			</li>
+			<li>Robustness is extended across the continuous <i>SO</i>(3) space of orientations, rather than a
+				fixed subset, with no measurable orientation-dependent performance degradation and improved sample
+				efficiency compared to the baseline.
+			</li>
+			<li>A new finger-gaiting reward formulation yields an 18.1% improvement in task performance while
+				reducing average joint torques by 26.7%.
+			</li>
+			<li>Results are validated on objects from the YCB benchmark, showing a more reliable and consistent
+				training procedure than the baseline.
+			</li>
+		</ul>
+	</div>
+
+	<hr>
+	<h3 style="text-align: center">Workspace Utilization &amp; Grasp Stability</h3>
+	<div class="gap-10"></div>
+	<figure>
+		<img src="img/figure2.png" alt="Comparison of workspace utilization and grasp stability">
+		<figcaption>
+			<b>Figure 2. Comparison of workspace utilization and grasp stability.</b> <b>On the left:</b> Reached
+			subspace of the index finger during in-hand rotation, highlighting exemplar configurations for the
+			Hora (Qi et al., 2022) baseline (in blue) and GARL (in red). The baseline straight finger corresponds
+			to a high r<sub>mid_joints</sub> penalty, while GARL shows a folded finger configuration with enhanced
+			manipulability. <b>On the right:</b> Evolution of grasp stability (r<sub>wrench_possible</sub>) for the
+			two policies from identical initial conditions. Insets highlight momentary instabilities in the
+			baseline where the grasp matrix loses full rank, and in which external perturbations may cause the
+			object to slip or fall.
+		</figcaption>
+	</figure>
+
+	<hr>
+	<h3 style="text-align: center">Robustness to Unseen Hand Orientations</h3>
+	<div class="gap-10"></div>
+	<figure>
+		<img src="img/figure4.png" alt="Robustness to unseen hand orientations">
+		<figcaption>
+			<b>Figure 4. Robustness to unseen hand orientations.</b> The planispheres display the mean rotation
+			reward for (a) the Hora's teacher (baseline) and (b) GARL. Black markers indicate the six canonical
+			hand orientations used during training. The baseline fails to generalize to many orientations,
+			producing large regions of poor performance, whereas our method yields a substantially more uniform
+			performance distribution over the sphere.
+		</figcaption>
+	</figure>
+
+	<hr>
+	<h2 style="text-align: center">BibTeX</h2>
+	<pre class="bibtex">@inproceedings{thomas2026garl,
+  title     = {{GARL: Grasp-Aware Reinforcement Learning for Robust and Dexterous In-Hand Rotation}},
+  author    = {Thomas, Guillaume and Rabarisoa, Jaonary and Filliat, David and Pham, Quoc Cuong and Grossard, Mathieu},
+  booktitle = {Proceedings of the International Conference on Informatics in Control, Automation and Robotics (ICINCO 2026)},
+  year      = {2026}
+}</pre>
+
+	<hr>
+	<p style="text-align: center; color: #888; font-size: 0.85rem;">CEA List &middot; ENSTA &middot; Universit&eacute; Paris-Saclay</p>
+	<div class="gap-30"></div>
+</div>
+
+</body>
+</html>
