@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F.L.E.M.M.A.R.D. — Console d'administration</title>
+<style>
+  :root {
+    --bg: #0b0b12;
+    --panel: #14141f;
+    --panel-2: #1c1c2b;
+    --border: #2a2a3d;
+    --text: #e8e6f0;
+    --muted: #8b89a0;
+    --accent: #ff7eb6;
+    --accent-2: #b28dff;
+    --danger: #ff5c7a;
+    --ok: #5ce0a0;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background:
+      radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,.85) 100%),
+      radial-gradient(ellipse at 20% 10%, rgba(255,40,60,.14), transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(178,141,255,.10), transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='5' stroke-linecap='round'%3E%3Cpath d='M38 74 L82 100 M82 74 L38 100'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='.07'%3E%3Cpath d='M60 22 c-17 0 -28 11 -28 26 c0 9 4 15 10 19 v9 h36 v-9 c6 -4 10 -10 10 -19 c0 -15 -11 -26 -28 -26z'/%3E%3C/g%3E%3Cg fill='%230b0b12'%3E%3Ccircle cx='49' cy='49' r='7'/%3E%3Ccircle cx='71' cy='49' r='7'/%3E%3Cpath d='M60 56 l-4 7 h8z'/%3E%3Crect x='50' y='70' width='3' height='6'/%3E%3Crect x='58.5' y='70' width='3' height='6'/%3E%3Crect x='67' y='70' width='3' height='6'/%3E%3C/g%3E%3C/svg%3E"),
+      var(--bg);
+    background-size: auto, auto, auto, 120px 120px, auto;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow-x: hidden;
+  }
+
+  /* Crime-scene decor */
+  .tape {
+    position: fixed;
+    left: -20vw; width: 140vw;
+    padding: 8px 0;
+    background: repeating-linear-gradient(-45deg, #f5c400 0 28px, #1a1a1a 28px 40px);
+    box-shadow: 0 6px 20px rgba(0,0,0,.6);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .tape span {
+    display: block;
+    background: #f5c400;
+    color: #111;
+    font: 800 15px/1.6 "Arial Black", Impact, sans-serif;
+    letter-spacing: .2em;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .tape.t1 { top: 14vh; transform: rotate(-8deg); }
+  .tape.t2 { bottom: 12vh; transform: rotate(6deg); }
+  .deco {
+    position: fixed;
+    font-size: 42px;
+    opacity: .35;
+    filter: grayscale(.3) drop-shadow(0 0 8px rgba(255,0,40,.5));
+    animation: float 7s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-6deg); }
+    50% { transform: translateY(-14px) rotate(6deg); }
+  }
+  .card { z-index: 1; }
+  .card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px 32px 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.02) inset;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: "";
+    position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: linear-gradient(90deg, #ff5e5e, #ffb35e, #ffe95e, #6be38a, #5eb8ff, #b28dff);
+  }
+  .org {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .org strong {
+    display: block;
+    font-size: 22px;
+    letter-spacing: .3em;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .avatar {
+    width: 148px; height: 148px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    padding: 4px;
+    background: conic-gradient(#ff5e5e, #ffb35e, #ffe95e, #6be38a, #5eb8ff, #b28dff, #ff5e5e);
+    animation: spin 8s linear infinite;
+  }
+  .avatar-inner {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #1a1a28;
+    animation: spin 8s linear infinite reverse;
+  }
+  .avatar-inner { position: relative; }
+  .avatar-inner > * { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; }
+  .avatar-inner .fallback { display: none; }
+  .avatar-inner.no-photo .fallback { display: block; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .role {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .role b { color: var(--accent); font-weight: 600; }
+  label {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 6px 2px;
+  }
+  input {
+    width: 100%;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: var(--text);
+    font-size: 14px;
+    margin-bottom: 16px;
+    outline: none;
+    transition: border-color .15s;
+  }
+  input:focus { border-color: var(--accent-2); }
+  button.primary {
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+    padding: 13px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    cursor: pointer;
+    transition: filter .15s, transform .05s;
+  }
+  button.primary:hover { filter: brightness(1.1); }
+  button.primary:active { transform: translateY(1px); }
+  .link {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--accent-2);
+    background: none; border: 0; cursor: pointer;
+    width: 100%;
+  }
+  .link:hover { text-decoration: underline; }
+  .msg {
+    min-height: 18px;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 12px;
+  }
+  .msg.err { color: var(--danger); }
+  .msg.ok { color: var(--ok); }
+  .hidden { display: none !important; }
+
+  /* Recovery */
+  .riddle {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 4px 0 6px;
+  }
+  .counter {
+    text-align: center;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 18px; }
+  .dots span {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--border);
+    transition: background .3s;
+  }
+  .dots span.done { background: var(--ok); }
+  .dots span.current { background: var(--accent-2); }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .grid.slide { animation: slidein .35s ease; }
+  @keyframes slidein { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+  .tile {
+    aspect-ratio: 1;
+    font-size: 56px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform .12s, border-color .15s, background .15s;
+    user-select: none;
+  }
+  .tile svg { width: 66%; height: 66%; }
+  .tile:hover { transform: scale(1.04); border-color: var(--accent-2); }
+  .tile.wrong { animation: shake .4s; border-color: var(--danger); background: rgba(255,92,122,.1); }
+  .tile.right { border-color: var(--ok); background: rgba(92,224,160,.12); }
+  @keyframes shake {
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+  }
+  @keyframes pop { 0% { transform: scale(0); } 70% { transform: scale(1.2); } 100% { transform: scale(1); } }
+  /* Rebus view */
+  .card { transition: max-width .4s ease; }
+  .card.wide { max-width: 640px; }
+  .warning {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ffd27a;
+    background: rgba(245,196,0,.08);
+    border: 1px solid rgba(245,196,0,.35);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    animation: pop .4s ease;
+  }
+  .rebus {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: none;
+    cursor: zoom-in;
+  }
+  .rebus img { display: block; width: 100%; height: auto; }
+  .lightbox {
+    position: fixed; inset: 0;
+    z-index: 10;
+    background: rgba(0,0,0,.85);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    cursor: zoom-out;
+  }
+  .lightbox img {
+    max-width: 100%; max-height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.8);
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #55536a;
+    margin-top: 22px;
+  }
+</style>
+</head>
+<body>
+  <div class="tape t1"><span>SCÈNE DE CRIME — NE PAS FRANCHIR — SCÈNE DE CRIME — NE PAS FRANCHIR — SCÈNE DE CRIME — NE PAS FRANCHIR — SCÈNE DE CRIME — NE PAS FRANCHIR — SCÈNE DE CRIME — NE PAS FRANCHIR —</span></div>
+  <div class="tape t2"><span>RANÇON EXIGÉE — 1 000 000 DE CÂLINS — RANÇON EXIGÉE — 1 000 000 DE CÂLINS — RANÇON EXIGÉE — 1 000 000 DE CÂLINS — RANÇON EXIGÉE — 1 000 000 DE CÂLINS —</span></div>
+  <div class="deco" style="top:6%;left:6%">💀</div>
+  <div class="deco" style="top:30%;left:12%;animation-delay:-2s">🔪</div>
+  <div class="deco" style="top:62%;left:5%;animation-delay:-4s">☠️</div>
+  <div class="deco" style="top:84%;left:20%;animation-delay:-1s">💰</div>
+  <div class="deco" style="top:8%;right:8%;animation-delay:-3s">⛓️</div>
+  <div class="deco" style="top:38%;right:6%;animation-delay:-5s">🕶️</div>
+  <div class="deco" style="top:66%;right:14%;animation-delay:-2.5s">💀</div>
+  <div class="deco" style="top:88%;right:5%;animation-delay:-6s">🔫</div>
+  <main class="card">
+    <div class="org">
+      <strong>F.L.E.M.M.A.R.D.</strong>
+      Fédération Louche des Enleveurs<br>de Milk &amp; Mocha Avec Rançon Dingodingue
+    </div>
+
+    <div class="avatar">
+      <div class="avatar-inner">
+        <!-- Real photo; if milk_mocha.jpg is missing, the drawing below is shown instead -->
+        <img src="milk_mocha.jpg" alt="Milk & Mocha"
+             onerror="this.parentNode.classList.add('no-photo')">
+        <svg class="fallback" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Milk & Mocha">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#cfe8ff"/>
+              <stop offset="1" stop-color="#ffe3f1"/>
+            </linearGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#sky)"/>
+          <!-- Rainbow -->
+          <g fill="none" stroke-width="9" opacity=".9">
+            <circle cx="100" cy="150" r="92" stroke="#ff6b6b"/>
+            <circle cx="100" cy="150" r="83" stroke="#ffb36b"/>
+            <circle cx="100" cy="150" r="74" stroke="#ffe66b"/>
+            <circle cx="100" cy="150" r="65" stroke="#7be38a"/>
+            <circle cx="100" cy="150" r="56" stroke="#6bbaff"/>
+            <circle cx="100" cy="150" r="47" stroke="#b28dff"/>
+          </g>
+          <!-- Clouds -->
+          <g fill="#fff">
+            <circle cx="18" cy="150" r="16"/><circle cx="36" cy="142" r="18"/><circle cx="8" cy="160" r="14"/>
+            <circle cx="182" cy="150" r="16"/><circle cx="164" cy="142" r="18"/><circle cx="192" cy="160" r="14"/>
+          </g>
+          <!-- Sparkles & hearts -->
+          <g fill="#fff">
+            <path d="M30 40 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/>
+            <path d="M168 30 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z"/>
+          </g>
+          <path d="M100 40 c-4 -8 -16 -6 -14 4 c1 6 14 13 14 13 s13 -7 14 -13 c2 -10 -10 -12 -14 -4z" fill="#ff7eb6"/>
+
+          <!-- Milk (white bear) -->
+          <g transform="translate(62 128)">
+            <ellipse cx="0" cy="58" rx="36" ry="30" fill="#fff" stroke="#6b4a3a" stroke-width="2.5"/>
+            <circle cx="-26" cy="-30" r="12" fill="#fff" stroke="#6b4a3a" stroke-width="2.5"/>
+            <circle cx="26" cy="-30" r="12" fill="#fff" stroke="#6b4a3a" stroke-width="2.5"/>
+            <circle cx="-26" cy="-30" r="5" fill="#ffc9dc"/>
+            <circle cx="26" cy="-30" r="5" fill="#ffc9dc"/>
+            <ellipse cx="0" cy="0" rx="38" ry="34" fill="#fff" stroke="#6b4a3a" stroke-width="2.5"/>
+            <circle cx="-13" cy="-3" r="3.6" fill="#3a2a22"/>
+            <circle cx="13" cy="-3" r="3.6" fill="#3a2a22"/>
+            <circle cx="-12" cy="-4.2" r="1.2" fill="#fff"/>
+            <circle cx="14" cy="-4.2" r="1.2" fill="#fff"/>
+            <ellipse cx="-22" cy="8" rx="6" ry="3.5" fill="#ffb3cf"/>
+            <ellipse cx="22" cy="8" rx="6" ry="3.5" fill="#ffb3cf"/>
+            <ellipse cx="0" cy="5" rx="3.5" ry="2.5" fill="#3a2a22"/>
+            <path d="M-5 10 q5 5 10 0" fill="none" stroke="#3a2a22" stroke-width="2" stroke-linecap="round"/>
+          </g>
+
+          <!-- Mocha (brown bear) -->
+          <g transform="translate(138 132)">
+            <ellipse cx="0" cy="58" rx="36" ry="30" fill="#a97a5a" stroke="#5a3a28" stroke-width="2.5"/>
+            <circle cx="-26" cy="-30" r="12" fill="#a97a5a" stroke="#5a3a28" stroke-width="2.5"/>
+            <circle cx="26" cy="-30" r="12" fill="#a97a5a" stroke="#5a3a28" stroke-width="2.5"/>
+            <circle cx="-26" cy="-30" r="5" fill="#e6c3a8"/>
+            <circle cx="26" cy="-30" r="5" fill="#e6c3a8"/>
+            <ellipse cx="0" cy="0" rx="38" ry="34" fill="#a97a5a" stroke="#5a3a28" stroke-width="2.5"/>
+            <ellipse cx="0" cy="9" rx="15" ry="11" fill="#e6c3a8"/>
+            <path d="M-17 -3 q4 -5 8 0" fill="none" stroke="#2a1a12" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M9 -3 q4 -5 8 0" fill="none" stroke="#2a1a12" stroke-width="2.6" stroke-linecap="round"/>
+            <ellipse cx="-24" cy="8" rx="5.5" ry="3.2" fill="#ff9ab8" opacity=".85"/>
+            <ellipse cx="24" cy="8" rx="5.5" ry="3.2" fill="#ff9ab8" opacity=".85"/>
+            <ellipse cx="0" cy="5" rx="3.5" ry="2.5" fill="#2a1a12"/>
+            <path d="M-5 11 q5 5 10 0" fill="none" stroke="#2a1a12" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="role">Connexion <b>Administrateur·ice Suprême</b></div>
+
+    <!-- Login view -->
+    <section id="login-view">
+      <form id="login-form" autocomplete="off">
+        <label for="user">Identifiant</label>
+        <input id="user" type="text" placeholder="chef.ravisseur@flemmard.org">
+        <label for="pass">Mot de passe</label>
+        <input id="pass" type="password" placeholder="••••••••">
+        <button class="primary" type="submit">Se connecter</button>
+      </form>
+      <div class="msg err" id="login-msg"></div>
+      <button class="link" id="forgot-btn" type="button">Mot de passe oublié ?</button>
+    </section>
+
+    <!-- Recovery view -->
+    <section id="recover-view" class="hidden">
+      <p class="riddle">Pour identifier votre compte, trouver l'intrus dans vos dernières vacances</p>
+      <div class="counter" id="counter">(0/3)</div>
+      <div class="dots" id="dots"><span></span><span></span><span></span></div>
+      <div class="grid" id="grid"></div>
+      <div class="msg" id="recover-msg"></div>
+      <button class="link" id="back-btn" type="button">← Retour à la connexion</button>
+    </section>
+
+    <!-- Rebus view -->
+    <section id="rebus-view" class="hidden">
+      <div class="warning">⚠️ Hmm, votre connexion paraît suspecte… Essayez ce rébus pour voir&nbsp;?</div>
+      <button class="rebus" id="rebus-img" type="button">
+        <img src="rebus.jpeg" alt="Rébus">
+      </button>
+      <button class="link" id="rebus-back-btn" type="button">← Retour à la connexion</button>
+    </section>
+
+    <div class="footer">© F.L.E.M.M.A.R.D. — Aucun ours n'a été maltraité. Enfin presque.</div>
+  </main>
+
+  <div class="lightbox hidden" id="lightbox">
+    <img src="rebus.jpeg" alt="Rébus">
+  </div>
+
+<script>
+  // Each panel: four pictures, the odd one out is `answer`.
+  const PANELS = [
+    { items: ["🌧️", "🏰", "🚐", "🐧"], answer: "🐧" }, // rain, Neuschwanstein, minivan, penguin
+    { items: ["🌧️", "gondola", "backpack", "🐧"], answer: "🐧" }, // rain, gondola, hiking backpack, penguin
+    { items: ["🌧️", "🥞", "💻", "🛶"], answer: "🌧️" }, // rain, crêpe, computer, kayak
+  ];
+
+  // Pictures with no matching emoji, drawn as SVG.
+  const ICONS = {
+    gondola: `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 54 q6 -4 12 0 t12 0 t12 0 t12 0 t12 0" fill="none" stroke="#5eb8ff" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M4 40 q4 10 22 10 h20 q12 0 16 -12 q-4 4 -12 4 h-30 q-10 0 -16 -2z" fill="#1d1d24" stroke="#8b89a0" stroke-width="1"/>
+      <path d="M61 27 v12 M61 28.5 h2.5 M61 31.5 h2.5 M61 34.5 h2.5" stroke="#d9d9e3" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M20 41 q6 -6 14 0z" fill="#b8323c"/>
+      <line x1="44" y1="16" x2="30" y2="58" stroke="#c49058" stroke-width="2" stroke-linecap="round"/>
+      <rect x="40" y="22" width="9" height="12" rx="2" fill="#fff"/>
+      <path d="M40 25 h9 M40 28 h9 M40 31 h9" stroke="#1e2a6b" stroke-width="1.6"/>
+      <rect x="40.5" y="34" width="8" height="8" fill="#1d1d24"/>
+      <circle cx="44.5" cy="18" r="3.6" fill="#f2c9a5"/>
+      <ellipse cx="44.5" cy="14.8" rx="6.5" ry="1.4" fill="#e8d28a"/>
+      <rect x="41.5" y="11.5" width="6" height="3.5" rx="1" fill="#e8d28a"/>
+      <rect x="41.5" y="13.4" width="6" height="1.2" fill="#b8323c"/>
+    </svg>`,
+    backpack: `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 10 q10 -6 20 0" fill="none" stroke="#3f4a2a" stroke-width="3" stroke-linecap="round"/>
+      <rect x="18" y="12" width="28" height="42" rx="9" fill="#4f7a3a"/>
+      <path d="M17 18 q0 -8 15 -8 q15 0 15 8 v6 q-15 4 -30 0z" fill="#e0682b"/>
+      <path d="M26 24 v6 M38 24 v6" stroke="#2b2b2b" stroke-width="2.4" stroke-linecap="round"/>
+      <rect x="23" y="32" width="18" height="14" rx="4" fill="#3d6230" stroke="#2c4823" stroke-width="1.5"/>
+      <path d="M25 36 h14" stroke="#2c4823" stroke-width="1.5"/>
+      <rect x="13" y="28" width="6" height="18" rx="3" fill="#3d6230"/>
+      <rect x="45" y="28" width="6" height="18" rx="3" fill="#3d6230"/>
+      <line x1="12" y1="36" x2="20" y2="36" stroke="#2b2b2b" stroke-width="2"/>
+      <line x1="44" y1="36" x2="52" y2="36" stroke="#2b2b2b" stroke-width="2"/>
+      <rect x="14" y="52" width="36" height="9" rx="4.5" fill="#5eb8ff"/>
+      <path d="M20 52 v9 M44 52 v9" stroke="#2b2b2b" stroke-width="2"/>
+      <path d="M46 16 q6 0 6 6 q0 5 -5 5" fill="none" stroke="#c0c0c8" stroke-width="2.2"/>
+    </svg>`,
+  };
+
+  const $ = (id) => document.getElementById(id);
+  let step = 0;
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function renderProgress() {
+    $("counter").textContent = `(${step}/3)`;
+    [...$("dots").children].forEach((d, i) => {
+      d.className = i < step ? "done" : i === step ? "current" : "";
+    });
+  }
+
+  function renderPanel() {
+    renderProgress();
+    $("recover-msg").textContent = "";
+    if (step >= PANELS.length) {
+      showRebus();
+      return;
+    }
+    const grid = $("grid");
+    grid.classList.remove("hidden", "slide");
+    void grid.offsetWidth; // restart animation
+    grid.classList.add("slide");
+    grid.innerHTML = "";
+    const panel = PANELS[step];
+    for (const item of shuffle(panel.items)) {
+      const tile = document.createElement("div");
+      tile.className = "tile";
+      if (ICONS[item]) tile.innerHTML = ICONS[item];
+      else tile.textContent = item;
+      tile.onclick = () => pick(tile, item === panel.answer);
+      grid.appendChild(tile);
+    }
+  }
+
+  let locked = false;
+  function pick(tile, correct) {
+    if (locked) return;
+    const msg = $("recover-msg");
+    if (correct) {
+      locked = true;
+      tile.classList.add("right");
+      msg.className = "msg ok";
+      msg.textContent = "✓";
+      setTimeout(() => { step++; locked = false; renderPanel(); }, 600);
+    } else {
+      tile.classList.remove("wrong");
+      void tile.offsetWidth;
+      tile.classList.add("wrong");
+      msg.className = "msg err";
+      msg.textContent = "✗";
+    }
+  }
+
+  function showRecover() {
+    step = 0;
+    $("login-view").classList.add("hidden");
+    $("recover-view").classList.remove("hidden");
+    renderPanel();
+  }
+
+  function showLogin() {
+    $("recover-view").classList.add("hidden");
+    $("rebus-view").classList.add("hidden");
+    $("login-view").classList.remove("hidden");
+    document.querySelector(".card").classList.remove("wide");
+  }
+
+  function showRebus() {
+    $("recover-view").classList.add("hidden");
+    $("rebus-view").classList.remove("hidden");
+    document.querySelector(".card").classList.add("wide");
+  }
+
+  $("forgot-btn").onclick = showRecover;
+  $("back-btn").onclick = showLogin;
+  $("rebus-back-btn").onclick = showLogin;
+  $("rebus-img").onclick = () => $("lightbox").classList.remove("hidden");
+  $("lightbox").onclick = () => $("lightbox").classList.add("hidden");
+
+  // Nothing is sent anywhere: login always fails.
+  $("login-form").onsubmit = (e) => {
+    e.preventDefault();
+    $("pass").value = "";
+    $("login-msg").textContent = "Accès refusé.";
+  };
+</script>
+</body>
+</html>
