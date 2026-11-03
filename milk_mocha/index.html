@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>F.L.E.M.M.A.R.D. — Console d'administration</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <style>
   :root {
     --bg: #0b0b12;
@@ -257,6 +258,202 @@
     cursor: zoom-in;
   }
   .rebus img { display: block; width: 100%; height: auto; }
+  .rebus img[src^="Guillaume"] { max-height: 60vh; object-fit: contain; background: #000; }
+  .answer {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .answer input { margin: 0; flex: 1; }
+  .answer .primary { width: auto; padding: 0 22px; }
+  input.wrong { animation: shake .4s; border-color: var(--danger); }
+  .reveal {
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 18px 0;
+    animation: pop .4s ease;
+  }
+
+  /* Mailbox view: full-screen webmail */
+  #mail-view {
+    position: fixed; inset: 0;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 64px 1fr;
+    background: #f6f8fc;
+    color: #1f1f1f;
+    font: 14px/1.4 "Segoe UI", Roboto, system-ui, sans-serif;
+    text-align: left;
+  }
+  :where(#mail-view) button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  .icon { width: 20px; height: 20px; fill: currentColor; flex: none; }
+  .icon-btn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #444746;
+  }
+  .icon-btn:hover { background: rgba(68,71,70,.08); }
+  .m-top {
+    grid-column: 1 / -1;
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 16px 0 8px;
+  }
+  .m-brand { display: flex; align-items: center; gap: 8px; width: 216px; font-size: 20px; color: #444746; }
+  .m-brand img { width: 32px; height: 32px; border-radius: 50%; }
+  .m-search {
+    flex: 1; max-width: 720px;
+    margin: 0;
+    display: flex; align-items: center; gap: 10px;
+    background: #e9eef6;
+    border-radius: 24px;
+    padding: 0 16px;
+    height: 46px;
+    color: #444746;
+  }
+  .m-search input {
+    flex: 1; margin: 0; padding: 0;
+    background: none; border: 0;
+    color: #1f1f1f; font-size: 15px;
+  }
+  .m-search input::placeholder { color: #5f6368; }
+  .m-right { margin-left: auto; display: flex; align-items: center; gap: 4px; position: relative; }
+  .m-avatar {
+    width: 32px; height: 32px; margin-left: 8px;
+    border-radius: 50%;
+    background: #7b1fa2 !important; color: #fff !important;
+    font-weight: 600;
+  }
+  .m-account {
+    position: absolute; right: 0; top: 46px;
+    width: 280px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.18);
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+  }
+  .m-account .m-avatar { width: 64px; height: 64px; font-size: 28px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; }
+  .m-account .m-email { color: #5f6368; margin-bottom: 16px; }
+  .m-account .back-btn {
+    border: 1px solid #747775 !important;
+    border-radius: 20px;
+    padding: 8px 20px;
+  }
+  .m-account .back-btn:hover { background: #f1f3f4 !important; }
+  .m-side { padding: 8px 0; overflow-y: auto; }
+  .m-compose {
+    display: inline-flex !important; align-items: center; gap: 12px;
+    margin: 0 0 16px 8px;
+    padding: 0 24px 0 18px;
+    height: 56px;
+    border-radius: 16px;
+    background: #c2e7ff !important;
+    font-weight: 500 !important;
+    transition: box-shadow .15s;
+  }
+  .m-compose:hover { box-shadow: 0 1px 3px rgba(0,0,0,.25); }
+  .m-folder {
+    width: calc(100% - 8px);
+    display: flex !important; align-items: center; gap: 16px;
+    height: 32px;
+    padding: 0 12px 0 26px !important;
+    border-radius: 0 16px 16px 0;
+    text-align: left;
+  }
+  .m-folder:hover { background: #e8eaed !important; }
+  .m-folder.active { background: #d3e3fd !important; font-weight: 700; }
+  .m-folder .count { margin-left: auto; font-size: 12px; font-weight: 700; }
+  .m-labels-title { margin: 18px 0 6px 26px; font-size: 15px; font-weight: 500; }
+  .dot { width: 12px; height: 12px; border-radius: 3px; display: inline-block; flex: none; margin: 0 4px; }
+  .m-main {
+    background: #fff;
+    border-radius: 16px;
+    margin: 0 16px 16px 0;
+    overflow: auto;
+    display: flex; flex-direction: column;
+  }
+  .m-toolbar {
+    display: flex; align-items: center; gap: 4px;
+    padding: 4px 8px;
+    min-height: 48px;
+    color: #444746;
+  }
+  .m-toolbar .m-pages { margin-left: auto; font-size: 12px; color: #5f6368; padding-right: 8px; }
+  .m-check { width: 18px; height: 18px; margin: 0 11px; border: 2px solid #5f6368; border-radius: 2px; flex: none; }
+  .m-tabs { display: flex; border-bottom: 1px solid #e0e0e0; }
+  .m-tab {
+    width: 250px;
+    display: flex !important; align-items: center; gap: 16px;
+    padding: 14px 16px !important;
+    color: #444746;
+    border-bottom: 3px solid transparent !important;
+  }
+  .m-tab.active { color: #0b57d0 !important; border-bottom-color: #0b57d0 !important; font-weight: 500; }
+  .m-row {
+    width: 100%;
+    display: flex !important; align-items: center;
+    height: 40px;
+    padding: 0 16px 0 0 !important;
+    border-bottom: 1px solid #f1f3f4 !important;
+    text-align: left;
+    background: #f2f6fc !important;
+  }
+  .m-row:hover { box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15); position: relative; }
+  .m-row.unread { background: #fff !important; font-weight: 700; }
+  .m-row .star { color: #5f6368; margin-right: 10px; }
+  .m-row .from { width: 180px; flex: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .m-row .line { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .m-row .snippet { color: #5f6368; font-weight: 400; }
+  .m-row .time { width: 64px; text-align: right; font-size: 12px; }
+  .m-empty { padding: 48px; text-align: center; color: #5f6368; }
+  .m-read { padding: 4px 0 40px; }
+  .m-subject { display: flex; align-items: center; gap: 12px; padding: 12px 24px 8px 72px; }
+  .m-subject h2 { font-size: 22px; font-weight: 400; margin: 0; }
+  .chip { font-size: 12px; background: #ddd; border-radius: 4px; padding: 0 6px; color: #444; }
+  .m-sender { display: flex; align-items: flex-start; gap: 16px; padding: 12px 24px 0 16px; }
+  .m-sender-avatar {
+    width: 40px; height: 40px; flex: none;
+    border-radius: 50%;
+    background: #a97a5a; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600;
+  }
+  .m-sender-info { flex: 1; }
+  .m-sender-info b { font-weight: 700; }
+  .m-sender-info .addr, .m-sender-info .to { color: #5f6368; font-size: 12px; }
+  .m-sender-date { color: #5f6368; font-size: 12px; display: flex; align-items: center; gap: 4px; }
+  .m-text { padding: 18px 24px 0 72px; font-size: 14px; line-height: 1.6; }
+  .m-text p { margin: 0 0 12px; }
+  .m-replies { display: flex; gap: 12px; padding: 24px 24px 0 72px; }
+  .m-replies button {
+    display: inline-flex !important; align-items: center; gap: 8px;
+    border: 1px solid #747775 !important;
+    border-radius: 18px;
+    padding: 8px 20px 8px 16px !important;
+    font-weight: 500 !important;
+    color: #444746 !important;
+  }
+  .m-replies button:hover { background: #f1f3f4 !important; }
+  .m-toast {
+    position: fixed; left: 24px; bottom: 24px;
+    background: #323232; color: #fff;
+    padding: 14px 24px;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.3);
+    z-index: 6;
+  }
+  @media (max-width: 760px) {
+    #mail-view { grid-template-columns: 1fr; }
+    .m-side, .m-brand span, .m-tab:not(.active), .m-search { display: none !important; }
+    .m-brand { width: auto; }
+    .m-main { margin: 0; border-radius: 0; }
+    .m-row .from { width: 110px; }
+    .m-subject, .m-text, .m-replies { padding-left: 16px; }
+  }
   .lightbox {
     position: fixed; inset: 0;
     z-index: 10;
@@ -373,7 +570,7 @@
     <section id="login-view">
       <form id="login-form" autocomplete="off">
         <label for="user">Identifiant</label>
-        <input id="user" type="text" placeholder="chef.ravisseur@flemmard.org">
+        <input id="user" type="text" value="admin" placeholder="chef.ravisseur@flemmard.org">
         <label for="pass">Mot de passe</label>
         <input id="pass" type="password" placeholder="••••••••">
         <button class="primary" type="submit">Se connecter</button>
@@ -392,20 +589,147 @@
       <button class="link" id="back-btn" type="button">← Retour à la connexion</button>
     </section>
 
-    <!-- Rebus view -->
-    <section id="rebus-view" class="hidden">
-      <div class="warning">⚠️ Hmm, votre connexion paraît suspecte… Essayez ce rébus pour voir&nbsp;?</div>
-      <button class="rebus" id="rebus-img" type="button">
-        <img src="rebus.jpeg" alt="Rébus">
+    <!-- Counting view -->
+    <section id="count-view" class="hidden">
+      <div class="warning">⚠️ Hmm, votre temps de réponse est anormal... L'utilisateur met habituellement beaucoup plus de temps à répondre du fait de ses capacités cérébrales limitées... Nouveau test&nbsp;: Combien de Guillaume voyez-vous sur cette photo&nbsp;?</div>
+      <button class="rebus zoomable" type="button">
+        <img src="Guillaume_caché.jpeg" alt="Photo">
       </button>
-      <button class="link" id="rebus-back-btn" type="button">← Retour à la connexion</button>
+      <form class="answer" id="count-form" autocomplete="off">
+        <input id="count-input" type="number" min="0" inputmode="numeric" placeholder="Nombre de Guillaume">
+        <button class="primary" type="submit">Valider</button>
+      </form>
+      <div class="msg" id="count-msg"></div>
+      <button class="link back-btn" type="button">← Retour à la connexion</button>
     </section>
 
-    <div class="footer">© F.L.E.M.M.A.R.D. — Aucun ours n'a été maltraité. Enfin presque.</div>
+    <!-- Rebus view -->
+    <section id="rebus-view" class="hidden">
+      <div class="warning">⚠️ C'est pas possible d'être aussi persévérant pour reset son mdp. Laissez le serveur tranquille, bon sang... Bon, essayez ce rébus pour voir</div>
+      <button class="rebus zoomable" type="button">
+        <img src="rebus.jpeg" alt="Rébus">
+      </button>
+      <form class="answer" id="rebus-form" autocomplete="off">
+        <input id="rebus-input" type="text" placeholder="Réponse">
+        <button class="primary" type="submit">Valider</button>
+      </form>
+      <div class="msg" id="rebus-msg"></div>
+      <button class="link back-btn" type="button">← Retour à la connexion</button>
+    </section>
+
+    <!-- Smash view -->
+    <section id="smash-view" class="hidden">
+      <div class="warning">⚠️ Ok pas mal, mais ça ne prouve pas que vous n'êtes pas en train de subtiliser ce compte. Dernière question et une question plus perso cette fois-ci. Si je vous dis Smash? Vous pensez à quels 3 objets?</div>
+      <button class="primary" id="smash-btn" type="button">Ok j'ai trouvé les objets</button>
+      <div id="smash-reveal" class="hidden">
+        <p class="reveal">Qui est décrit ici? Et oui, c'était votre mot de passe depuis le début...</p>
+        <button class="primary back-btn" type="button">Retour à la connexion</button>
+      </div>
+    </section>
+
+    <div class="footer">© F.L.E.M.M.A.R.D.</div>
   </main>
 
+  <!-- Mailbox view -->
+  <section id="mail-view" class="hidden">
+    <header class="m-top">
+      <button class="icon-btn" type="button" aria-label="Menu"><svg class="icon" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></button>
+      <div class="m-brand"><img src="favicon.png" alt=""><span>Flemmard Mail</span></div>
+      <label class="m-search">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" placeholder="Rechercher dans les messages">
+      </label>
+      <div class="m-right">
+        <button class="icon-btn" type="button" aria-label="Aide"><svg class="icon" viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg></button>
+        <button class="icon-btn" type="button" aria-label="Paramètres"><svg class="icon" viewBox="0 0 24 24"><path d="M19.14 12.94a7.07 7.07 0 0 0 .06-.94c0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96a7.03 7.03 0 0 0-1.62-.94l-.36-2.54a.48.48 0 0 0-.48-.41h-3.84a.48.48 0 0 0-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.48.48 0 0 0-.59.22L2.74 8.87a.47.47 0 0 0 .12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32a.47.47 0 0 0-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2z"/></svg></button>
+        <button class="icon-btn m-avatar" id="m-avatar" type="button" aria-label="Compte">A</button>
+        <div class="m-account hidden" id="m-account">
+          <div class="m-avatar">A</div>
+          <div><b>Administrateur·ice Suprême</b></div>
+          <div class="m-email">admin@flemmard.org</div>
+          <button class="back-btn" type="button">Se déconnecter</button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="m-side">
+      <button class="m-compose m-locked" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Nouveau message</button>
+      <button class="m-folder active" data-folder="inbox" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 12h-4c0 1.66-1.35 3-3 3s-3-1.34-3-3H5V5h14v10z"/></svg>Boîte de réception<span class="count" id="unread">1</span></button>
+      <button class="m-folder" data-folder="starred" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="m22 9.24-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></svg>Messages suivis</button>
+      <button class="m-folder" data-folder="snoozed" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>En attente</button>
+      <button class="m-folder" data-folder="sent" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/></svg>Messages envoyés</button>
+      <button class="m-folder" data-folder="drafts" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>Brouillons</button>
+      <button class="m-folder" data-folder="spam" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M15.73 3H8.27L3 8.27v7.46L8.27 21h7.46L21 15.73V8.27L15.73 3zM12 17.3a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm1-4.3h-2V7h2v6z"/></svg>Spam</button>
+      <button class="m-folder" data-folder="trash" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>Corbeille</button>
+      <div class="m-labels-title">Libellés</div>
+      <button class="m-folder" data-folder="ops" type="button"><span class="dot" style="background:#e8453c"></span>Opérations</button>
+      <button class="m-folder" data-folder="ransom" type="button"><span class="dot" style="background:#f5c400"></span>Rançons</button>
+      <button class="m-folder" data-folder="hostages" type="button"><span class="dot" style="background:#a97a5a"></span>Otages</button>
+    </nav>
+
+    <main class="m-main">
+      <!-- Message list -->
+      <div id="inbox">
+        <div class="m-toolbar">
+          <span class="m-check"></span>
+          <button class="icon-btn" type="button" aria-label="Actualiser"><svg class="icon" viewBox="0 0 24 24"><path d="M17.65 6.35A7.96 7.96 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg></button>
+          <button class="icon-btn" type="button" aria-label="Plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg></button>
+          <span class="m-pages" id="m-pages">1–1 sur 1</span>
+        </div>
+        <div class="m-tabs">
+          <button class="m-tab active" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 12h-4c0 1.66-1.35 3-3 3s-3-1.34-3-3H5V5h14v10z"/></svg>Principale</button>
+          <button class="m-tab" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M21.41 11.58 12.41 2.58A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>Promotions</button>
+          <button class="m-tab" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>Réseaux sociaux</button>
+        </div>
+        <div id="m-list">
+          <button class="m-row unread" id="mail-row" type="button">
+            <span class="m-check"></span>
+            <svg class="icon star" viewBox="0 0 24 24"><path d="m22 9.24-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></svg>
+            <span class="from">Agent de terrain</span>
+            <span class="line">Colis récupérés <span class="snippet">- Les colis en fourrure ont été récupérés. Je les transporte vers le lieu qu'on avait convenu…</span></span>
+            <span class="time" id="mail-time-short"></span>
+          </button>
+        </div>
+        <div class="m-empty hidden" id="m-empty">Aucun message ici.</div>
+      </div>
+
+      <!-- Opened message -->
+      <div id="mail-open" class="hidden">
+        <div class="m-toolbar">
+          <button class="icon-btn" id="mail-back" type="button" aria-label="Retour"><svg class="icon" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></button>
+          <button class="icon-btn m-locked" type="button" aria-label="Archiver"><svg class="icon" viewBox="0 0 24 24"><path d="m20.54 5.23-1.39-1.68A1.45 1.45 0 0 0 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23A1.98 1.98 0 0 0 3 6.5V19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5 6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></button>
+          <button class="icon-btn m-locked" type="button" aria-label="Supprimer"><svg class="icon" viewBox="0 0 24 24"><path d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></button>
+          <button class="icon-btn m-locked" type="button" aria-label="Marquer comme non lu"><svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></button>
+          <span class="m-pages">1 sur 1</span>
+        </div>
+        <div class="m-read">
+          <div class="m-subject"><h2>Colis récupérés</h2><span class="chip">Boîte de réception</span><span class="chip" style="background:#fde2a6">Otages</span></div>
+          <div class="m-sender">
+            <div class="m-sender-avatar">AT</div>
+            <div class="m-sender-info">
+              <b>Agent de terrain</b> <span class="addr">&lt;agent.de.terrain@flemmard.org&gt;</span>
+              <div class="to">À moi ▾</div>
+            </div>
+            <div class="m-sender-date"><span id="mail-time-long"></span>
+              <button class="icon-btn m-locked" type="button" aria-label="Répondre"><svg class="icon" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg></button>
+            </div>
+          </div>
+          <div class="m-text">
+            <p>Les colis en fourrure ont été récupérés. Je les transporte vers le lieu qu'on avait convenu. Je vous donne plus de nouvelles d'ici jeudi matin, quand nous y serons.</p>
+            <p>Bien cordialement,<br>Agent de terrain</p>
+          </div>
+          <div class="m-replies">
+            <button class="m-locked" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg>Répondre</button>
+            <button class="m-locked" type="button"><svg class="icon" viewBox="0 0 24 24"><path d="M14 9V5l7 7-7 7v-4.1c-5 0-8.5 1.6-11 5.1 1-5 4-10 11-11z"/></svg>Transférer</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="m-toast hidden" id="m-toast">Action désactivée sur ce compte.</div>
+  </section>
+
   <div class="lightbox hidden" id="lightbox">
-    <img src="rebus.jpeg" alt="Rébus">
+    <img id="lightbox-img" src="" alt="">
   </div>
 
 <script>
@@ -472,7 +796,7 @@
     renderProgress();
     $("recover-msg").textContent = "";
     if (step >= PANELS.length) {
-      showRebus();
+      showCount();
       return;
     }
     const grid = $("grid");
@@ -510,37 +834,127 @@
     }
   }
 
+  const VIEWS = ["login-view", "recover-view", "count-view", "rebus-view", "smash-view", "mail-view"];
+  const WIDE = ["count-view", "rebus-view", "smash-view", "mail-view"];
+
+  function show(view) {
+    for (const v of VIEWS) $(v).classList.toggle("hidden", v !== view);
+    const card = document.querySelector(".card");
+    card.classList.toggle("wide", WIDE.includes(view));
+    document.querySelectorAll(".msg").forEach((m) => (m.textContent = ""));
+    document.querySelectorAll("form.answer input").forEach((i) => (i.value = ""));
+  }
+
+  // Lowercase, strip accents and surrounding spaces: "  CompliCITE " == "complicité".
+  const normalize = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").trim().toLowerCase();
+
+  function fail(input, msgId, text) {
+    input.classList.remove("wrong");
+    void input.offsetWidth;
+    input.classList.add("wrong");
+    const msg = $(msgId);
+    msg.className = "msg err";
+    msg.textContent = text;
+  }
+
   function showRecover() {
     step = 0;
-    $("login-view").classList.add("hidden");
-    $("recover-view").classList.remove("hidden");
+    show("recover-view");
     renderPanel();
   }
 
   function showLogin() {
-    $("recover-view").classList.add("hidden");
-    $("rebus-view").classList.add("hidden");
-    $("login-view").classList.remove("hidden");
-    document.querySelector(".card").classList.remove("wide");
+    show("login-view");
+    $("smash-reveal").classList.add("hidden");
+    $("smash-btn").classList.remove("hidden");
   }
 
-  function showRebus() {
-    $("recover-view").classList.add("hidden");
-    $("rebus-view").classList.remove("hidden");
-    document.querySelector(".card").classList.add("wide");
+  function showCount() {
+    show("count-view");
+  }
+
+  function showMail() {
+    show("mail-view");
+    openFolder("inbox");
+    $("m-account").classList.add("hidden");
+    // The email always arrived one hour before the page was opened.
+    const sent = new Date(Date.now() - 60 * 60 * 1000);
+    const hhmm = sent.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+    const day = sent.toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "short" });
+    $("mail-time-short").textContent = hhmm;
+    $("mail-time-long").textContent = `${day}, ${hhmm} (il y a 1 heure)`;
+  }
+
+  function openFolder(folder) {
+    document.querySelectorAll(".m-folder").forEach((f) => f.classList.toggle("active", f.dataset.folder === folder));
+    const inbox = folder === "inbox";
+    $("inbox").classList.remove("hidden");
+    $("mail-open").classList.add("hidden");
+    $("m-list").classList.toggle("hidden", !inbox);
+    $("m-empty").classList.toggle("hidden", inbox);
+    $("m-pages").textContent = inbox ? "1–1 sur 1" : "";
+  }
+
+  let toastTimer;
+  function toast() {
+    $("m-toast").classList.remove("hidden");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => $("m-toast").classList.add("hidden"), 2500);
   }
 
   $("forgot-btn").onclick = showRecover;
+  document.querySelectorAll(".back-btn").forEach((b) => (b.onclick = showLogin));
   $("back-btn").onclick = showLogin;
-  $("rebus-back-btn").onclick = showLogin;
-  $("rebus-img").onclick = () => $("lightbox").classList.remove("hidden");
+
+  document.querySelectorAll(".zoomable").forEach((b) => {
+    b.onclick = () => {
+      $("lightbox-img").src = b.querySelector("img").src;
+      $("lightbox").classList.remove("hidden");
+    };
+  });
   $("lightbox").onclick = () => $("lightbox").classList.add("hidden");
 
-  // Nothing is sent anywhere: login always fails.
+  $("count-form").onsubmit = (e) => {
+    e.preventDefault();
+    const input = $("count-input");
+    if (normalize(input.value) === "4") show("rebus-view");
+    else fail(input, "count-msg", "✗");
+  };
+
+  $("rebus-form").onsubmit = (e) => {
+    e.preventDefault();
+    const input = $("rebus-input");
+    if (normalize(input.value) === "complicite") show("smash-view");
+    else fail(input, "rebus-msg", "✗");
+  };
+
+  $("smash-btn").onclick = () => {
+    $("smash-btn").classList.add("hidden");
+    $("smash-reveal").classList.remove("hidden");
+  };
+
+  $("mail-row").onclick = () => {
+    $("mail-row").classList.remove("unread");
+    $("unread").classList.add("hidden");
+    $("inbox").classList.add("hidden");
+    $("mail-open").classList.remove("hidden");
+  };
+  $("mail-back").onclick = () => openFolder("inbox");
+  document.querySelectorAll(".m-folder").forEach((f) => (f.onclick = () => openFolder(f.dataset.folder)));
+  document.querySelectorAll(".m-locked").forEach((b) => (b.onclick = toast));
+  $("m-avatar").onclick = () => $("m-account").classList.toggle("hidden");
+
+  // Nothing is sent anywhere: only the password "Clémence" is accepted.
   $("login-form").onsubmit = (e) => {
     e.preventDefault();
-    $("pass").value = "";
-    $("login-msg").textContent = "Accès refusé.";
+    const pass = $("pass");
+    if (normalize(pass.value) === "clemence") {
+      pass.value = "";
+      showMail();
+    } else {
+      pass.value = "";
+      $("login-msg").textContent = "Accès refusé.";
+    }
   };
 </script>
 </body>
